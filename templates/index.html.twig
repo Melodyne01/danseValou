@@ -1,0 +1,134 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Controller!{% endblock %}
+
+{% block body %}
+<div class="uk-section-default header-section">
+    <div class="uk-section uk-light uk-background-cover" style="background-image: url(assets/images/pattern.jpg)">
+        <div class="uk-container">
+            <div class="uk-text-center" uk-grid>
+                <div class="uk-width-1-2">
+                    <div class="uk-text-left">
+                        <h1 class="uk-padding-large uk-padding-remove-left">Bienvenue chez Danse Valou</h1>
+                        <h2 class="uk-padding-medium uk-padding-remove-left">Venez partager la magie et la passion de la danse dans la bonne humeur chez nous</h2>
+                        <a class=" uk-margin-medium uk-margin-remove-left uk-button" href="#">Nous contacter</a>
+                    </div>
+                </div>
+                <div class="uk-width-1-2">
+                    <img src="{{ asset('images/danser.png') }}" alt="Alternate Text" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="uk-section uk-section-large uk-background-secondary-lighter uk-light">
+    <div class="uk-container">
+        <h3>Notre histoire</h3>
+        <div class="uk-text-center" uk-grid>
+            <div class="uk-width-1-2">
+                <video src="https://yootheme.com/site/images/media/yootheme-pro.mp4" width="1800" height="1200" loop muted playsinline uk-video="autoplay: inview"></video>
+            </div>
+            <div class="uk-width-1-2">
+                <div class="uk-text-justify">
+                    <p>
+                        Tout a commencé en 1989, j'étais encore aux études à l'école de danse. On m'a proposé un remplacement de deux heures
+                        de cours de danse classique à l'école du Sacré Coeur Clos de Waterloo. J'ai accepté, les petites avaient entre 6 à 8 ans. J'ai
+                        alors proposé d'ajouter des heures en jazz pour les plus grandes. Puis, j'ai ajouté des cours pour les plus petites et de fil en
+                        aiguilles, j'ai été demandée au clos... Je donnais des cours dans différentes villes de Belgique :
+                        Tournai, Jodoigne, Anderlecht, Uccle, St. Gilles, Etterbeek, Braine L'Alleud, …
+                        Petit à petit mon école a grandi, mes petites élèves sont devenues grandes et maintenant elles viennent déposer leurs
+                        enfants chez moi. Ma priorité a toujours été que chacun se sente bien chez moi. Tous les élèves ont leur place.
+                        Il est vrai que je n'ai pas de jolies salles dotées de beaux miroirs et de beaux vestiaires. Quelques fois cela me peine mais
+                        on m'a très souvent dit: "peut-être que la salle n'est pas très jolie, mais ce que l'on ressent c'est l'amour et la joie entre nous
+                        et c'est ça qui fait que l'on se sent bien".
+                        J'ai ouvert la porte à d'autres styles pour compléter mon équipe mais j'ai toujours été entourée de belles personnes qui
+                        donnent énormément d'amour et de soleil dans ma vie. Je voudrais tant les remercier.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="uk-section uk-section-secondary uk-light" style="min-height:300px;">
+    <div class="uk-container">
+        <h3>Une année chez Danse Valou</h3>
+        <div>
+        <div class="uk-inline uk-light">
+            <img src="images/dark.jpg" width="1800" height="1200" alt="">
+            <a class="uk-position-absolute uk-transform-center" style="left: 20%; top: 30%" href="#" uk-marker></a>
+            <a class="uk-position-absolute uk-transform-center" style="left: 60%; top: 40%" href="#" uk-marker></a>
+            <a class="uk-position-absolute uk-transform-center" style="left: 80%; top: 70%" href="#" uk-marker></a>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="uk-section uk-background-secondary-lighter uk-light" style="min-height:300px;">
+    <div class="uk-container">
+        <h3>Notre histoire à commencé il y'a </h3>
+        <div id="timeCounter">Calculating...</div>
+    </div>
+</div>
+
+<div class="uk-section uk-section-large uk-section-secondary uk-light" style="min-height:300px;">
+    <div class="uk-container">
+        <h3>F.A.Q</h3>
+        <ul uk-accordion="multiple: true">
+            <li class="uk-open">
+                <a class="uk-accordion-title" href>Item 1</a>
+                <div class="uk-accordion-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </li>
+            <li>
+                <a class="uk-accordion-title" href>Item 2</a>
+                <div class="uk-accordion-content">
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor reprehenderit.</p>
+                </div>
+            </li>
+            <li>
+                <a class="uk-accordion-title" href>Item 3</a>
+                <div class="uk-accordion-content">
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat proident.</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+    // Set your target start date (year, month-1, day, hour, minute, second)
+    const startDate = new Date(2023, 5, 15, 12, 0, 0); // June 15, 2023 12:00:00
+
+    function updateCounter() {
+        const now = new Date();
+        const diff = now - startDate; // Difference in milliseconds
+
+        // Calculate time components
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        // Display the result
+        document.getElementById("timeCounter").innerHTML =
+            `<div class="uk-child-width-1-4@s" uk-grid>
+                <div>
+                    <div class="uk-height-small counter uk-card uk-card-default uk-card-body uk-flex uk-flex-center uk-flex-middle">${days} <p> jours</p></div>
+                </div>
+                <div>
+                    <div class="uk-height-small counter uk-card uk-card-default uk-card-body uk-flex uk-flex-center uk-flex-middle">${hours} <p> heures</p></div>
+                </div>
+                <div>
+                    <div class="uk-height-small counter uk-card uk-card-default uk-card-body uk-flex uk-flex-center uk-flex-middle">${minutes} <p> minutes</p></div>
+                </div>
+                <div>
+                    <div class="uk-height-small counter uk-card uk-card-default uk-card-body uk-flex uk-flex-center uk-flex-middle">${seconds} <p> secondes</p></div>
+                </div>
+            </div>`;
+    }
+    // Update immediately and then every second
+    updateCounter();
+    setInterval(updateCounter, 1000);
+</script>
+{% endblock %}
