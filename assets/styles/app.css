@@ -1,6 +1,6 @@
 @font-face {
   font-family: Scriptorial;
-  src: url(/fonts/Scriptorial.ttf) format('truetype');
+  src: url(../fonts/Scriptorial.ttf) format('truetype');
 }
 
 header a, .uk-navbar-nav li a, * h3{
