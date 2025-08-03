@@ -10,26 +10,40 @@
         <!-- UIkit JS -->
         <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.16/dist/js/uikit.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.16/dist/js/uikit-icons.min.js"></script>
-        <link rel="stylesheet" href="/assets/css/index.css">
+        {{ encore_entry_link_tags('uikit') }}
+        {{ encore_entry_link_tags('app') }}
         {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
         {% endblock %}
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
     <header>
-        <div class="uk-child-width-1-1@s" uk-grid>
-            <nav class="uk-navbar-container uk-navbar-transparent uk-visible@s">
-                <div class="uk-container">
-                    <div uk-navbar>
-                        <div class="uk-navbar-left">
-                            <a class="uk-navbar-item uk-logo" href="{{path('app_home')}}" aria-label="Back to Home"><img src="{{ asset('images/logo.png') }}" alt="Alternate Text" /></a>
-                        </div>
-                        <div class="uk-navbar-center">
-                            <ul class="uk-navbar-nav">
+        <nav class="uk-navbar-container uk-navbar-transparent uk-visible@s">
+            <div class="uk-container">
+                <div uk-navbar>
+                    <div class="uk-navbar-left">
+                        <a class="uk-navbar-item uk-logo" href="{{path('app_home')}}" aria-label="Back to Home"><img src="{{ asset('images/logo.png') }}" alt="Alternate Text" /></a>
+                    </div>
+                    <div class="uk-navbar-center">
+                        <ul class="uk-navbar-nav">
+                            <li><a href="{{path('app_schedule')}}">Horaire</a></li>
+                            <li><a href="{{path('app_teachers')}}">Professeurs</a></li>
+                            <li><a href="{{path('app_gallery')}}">Photos</a></li>
+                            <li><a href="{{path('app_events')}}">Evénements à venir</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <nav class="uk-navbar-container uk-navbar-transparent uk-hidden@s">
+            <div class="uk-container small-nav">
+                <div uk-navbar>
+                    <div class="uk-navbar-left">
+                        <a class="uk-navbar-toggle uk-navbar-toggle-animate" uk-navbar-toggle-icon href="#"></a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
                                 <li><a href="{{path('app_schedule')}}">Horaire</a></li>
                                 <li><a href="{{path('app_teachers')}}">Professeurs</a></li>
                                 <li><a href="{{path('app_gallery')}}">Photos</a></li>
@@ -37,9 +51,12 @@
                             </ul>
                         </div>
                     </div>
+                    <div class="uk-navbar-center">
+                        <a class="uk-navbar-item uk-logo" href="{{path('app_home')}}" aria-label="Back to Home"><img src="{{ asset('images/logo.png') }}" alt="Alternate Text" /></a>
+                    </div>
                 </div>
-            </nav>
-        </div>
+            </div>
+        </nav>
     </header>
     <body class="uk-background-secondary">
          <!--[if lt IE 7]>
@@ -47,4 +64,17 @@
         <![endif]-->
         {% block body %}{% endblock %}
     </body>
+    <footer class="uk-background-secondary-lighter">
+        <div class="uk-section uk-section-small footer" id="footer">
+            <div class="uk-container">
+                <div class="uk-text-center">
+                    <a target="_blank" href="https://www.instagram.com/its.place_net/" uk-icon="instagram"></a>
+                    <a target="_blank" href="https://www.linkedin.com/company/it-s-place/" uk-icon="linkedin"></a>
+                    <a target="_blank" href="https://wa.me/32477753577" uk-icon="whatsapp"></a>
+                    <br>
+                    <p class="copyright">&copy;2024 <a href="https://itsplace.net/">IT'S PLACE</a> | Tous droits réservés</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </html>

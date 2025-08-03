@@ -4,14 +4,14 @@
 
 {% block body %}
 <div class="uk-section-default header-section">
-    <div class="uk-section uk-light uk-background-cover" style="background-image: url(assets/images/pattern.jpg)">
+    <div class="uk-section uk-background-cover" style="background-image: url(images/pattern.jpg)">
         <div class="uk-container">
             <div class="uk-text-center" uk-grid>
                 <div class="uk-width-1-2">
                     <div class="uk-text-left">
                         <h1 class="uk-padding-large uk-padding-remove-left">Bienvenue chez Danse Valou</h1>
                         <h2 class="uk-padding-medium uk-padding-remove-left">Venez partager la magie et la passion de la danse dans la bonne humeur chez nous</h2>
-                        <a class=" uk-margin-medium uk-margin-remove-left uk-button" href="#">Nous contacter</a>
+                        <a class="uk-margin-medium uk-margin-remove-left uk-button" href="#">Nous contacter</a>
                     </div>
                 </div>
                 <div class="uk-width-1-2">
@@ -21,14 +21,14 @@
         </div>
     </div>
 </div>
-<div class="uk-section uk-section-large uk-background-secondary-lighter uk-light">
+<div class="uk-section uk-section-large uk-background-secondary-lighter">
     <div class="uk-container">
         <h3>Notre histoire</h3>
         <div class="uk-text-center" uk-grid>
-            <div class="uk-width-1-2">
+            <div class="uk-width-1-2@m uk-width-1-1">
                 <video src="https://yootheme.com/site/images/media/yootheme-pro.mp4" width="1800" height="1200" loop muted playsinline uk-video="autoplay: inview"></video>
             </div>
-            <div class="uk-width-1-2">
+            <div class="uk-width-1-2@m uk-width-1-1">
                 <div class="uk-text-justify">
                     <p>
                         Tout a commencé en 1989, j'étais encore aux études à l'école de danse. On m'a proposé un remplacement de deux heures
@@ -50,28 +50,64 @@
     </div>
 </div>
 
-<div class="uk-section uk-section-secondary uk-light" style="min-height:300px;">
+<div class="uk-section uk-section-secondary-darker" style="min-height:300px;">
     <div class="uk-container">
         <h3>Une année chez Danse Valou</h3>
-        <div>
-        <div class="uk-inline uk-light">
-            <img src="images/dark.jpg" width="1800" height="1200" alt="">
-            <a class="uk-position-absolute uk-transform-center" style="left: 20%; top: 30%" href="#" uk-marker></a>
-            <a class="uk-position-absolute uk-transform-center" style="left: 60%; top: 40%" href="#" uk-marker></a>
-            <a class="uk-position-absolute uk-transform-center" style="left: 80%; top: 70%" href="#" uk-marker></a>
+        <div class="uk-text-center" uk-grid>
+            <div class="uk-width-1-2@m uk-width-1-1">
+                <div class="uk-text-justify">
+                    <p>
+                        Tout a commencé en 1989, j'étais encore aux études à l'école de danse. On m'a proposé un remplacement de deux heures
+                        de cours de danse classique à l'école du Sacré Coeur Clos de Waterloo. J'ai accepté, les petites avaient entre 6 à 8 ans. J'ai
+                        alors proposé d'ajouter des heures en jazz pour les plus grandes. Puis, j'ai ajouté des cours pour les plus petites et de fil en
+                        aiguilles, j'ai été demandée au clos... Je donnais des cours dans différentes villes de Belgique :
+                        Tournai, Jodoigne, Anderlecht, Uccle, St. Gilles, Etterbeek, Braine L'Alleud, …
+                        Tout a commencé en 1989, j'étais encore aux études à l'école de danse. On m'a proposé un remplacement de deux heures
+                        de cours de danse classique à l'école du Sacré Coeur Clos de Waterloo. J'ai accepté, les petites avaient entre 6 à 8 ans. J'ai
+                        alors proposé d'ajouter des heures en jazz pour les plus grandes. Puis, j'ai ajouté des cours pour les plus petites et de fil en
+                        aiguilles, j'ai été demandée au clos... Je donnais des cours dans différentes villes de Belgique :
+                        Tournai, Jodoigne, Anderlecht, Uccle, St. Gilles, Etterbeek, Braine L'Alleud, …
+                    </p>
+                </div>
+            </div>
+            <div class="uk-width-1-2@m uk-width-1-1">
+                 <div class="uk-container uk-margin">
+                    <div class="uk-child-width-1-3 uk-child-width-1-2@s" uk-grid="masonry: pack;" uk-lightbox="animation: scale">
+                        <div>
+                            <a class="uk-inline" href="images/design.jpg" data-caption="Caption 1">
+                                <img src="images/design.jpg" width="1800" height="1200" alt="">
+                            </a>
+                        </div>
+                         <div>
+                            <a class="uk-inline" href="images/design.jpg" data-caption="Caption 1">
+                                <img src="images/design.jpg" width="1800" height="1200" alt="">
+                            </a>
+                        </div>
+                        <div>
+                            <a class="uk-inline" href="images/design.jpg" data-caption="Caption 1">
+                                <img src="images/design.jpg" width="1800" height="1200" alt="">
+                            </a>
+                        </div>
+                         <div>
+                            <a class="uk-inline" href="images/design.jpg" data-caption="Caption 1">
+                                <img src="images/design.jpg" width="1800" height="1200" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    </div>
 </div>
-
-<div class="uk-section uk-background-secondary-lighter uk-light" style="min-height:300px;">
+             
+<div class="uk-section uk-background-secondary-lighter" style="min-height:300px;">
     <div class="uk-container">
-        <h3>Notre histoire à commencé il y'a </h3>
+        <h3>Notre histoire s'écrit depuis </h3>
         <div id="timeCounter">Calculating...</div>
     </div>
 </div>
 
-<div class="uk-section uk-section-large uk-section-secondary uk-light" style="min-height:300px;">
+<div class="uk-section uk-section-large uk-section-secondary-darker" style="min-height:300px;">
     <div class="uk-container">
         <h3>F.A.Q</h3>
         <ul uk-accordion="multiple: true">
@@ -112,7 +148,7 @@
 
         // Display the result
         document.getElementById("timeCounter").innerHTML =
-            `<div class="uk-child-width-1-4@s" uk-grid>
+            `<div class="uk-child-width-1-4@m uk-child-width-1-2" uk-grid>
                 <div>
                     <div class="uk-height-small counter uk-card uk-card-default uk-card-body uk-flex uk-flex-center uk-flex-middle">${days} <p> jours</p></div>
                 </div>
