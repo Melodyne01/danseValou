@@ -3,84 +3,105 @@
 {% block title %}Hello Controller!{% endblock %}
 
 {% block body %}
-<div class="uk-container schedule-section uk-background-secondary-lighter">
-    <div class="uk-section">
-        <div class="uk-container">
-            <h3>Notre horaire</h3>
-            <div class="uk-grid-match uk-child-width-1-3@s uk-text-center" uk-grid>
-                <div>
-                    <h3>Mercredi</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                </div>
-                <div>
-                    <h3>Jeudi</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                </div>
-                <div>
-                    <h3>Vendredi</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                </div>
+<div class="uk-container schedule-section uk-margin-large-top">
+    
+    <!-- Title as taped note -->
+    <div class="uk-flex uk-flex-center uk-margin-large-bottom">
+        <div class="uk-inline">
+             <div class="tape tape-top-center style:"margin-bottom:20px"></div>
+             <h2 class="uk-heading-small font-handwritten" style="background: #fff; padding: 20px 40px; transform: rotate(-2deg); box-shadow: 0 4px 10px rgba(0,0,0,0.1);">Notre horaire</h2>
+        </div>
+    </div>
+
+    <div class="uk-grid-match uk-child-width-1-3@m uk-child-width-1-1 uk-text-left" uk-grid>
+        <!-- Wednesday -->
+        <div>
+            <div class="polaroid rotate-1" style="background: #e3f2fd; padding: 20px;">
+                <h3 class="font-handwritten uk-text-center" style="color: var(--accent-primary);">Mercredi</h3>
+                <ul class="uk-list uk-list-divider" style="font-family: 'Indie Flower', cursive; font-size: 1.1rem; color: #555;">
+                    <li>14h00 - Jazz Débutant</li>
+                    <li>15h00 - Classique Moyen</li>
+                    <li>16h00 - Contemporain Avancé</li>
+                    <li>17h00 - Hip Hop Ados</li>
+                     <li>18h00 - Yoga Vinyasa</li>
+                </ul>
+                <div class="tape tape-corner-left"></div>
+            </div>
+        </div>
+
+        <!-- Thursday -->
+        <div>
+            <div class="polaroid rotate-neg-1" style="background: #fff9c4; padding: 20px;">
+                <h3 class="font-handwritten uk-text-center" style="color: var(--accent-primary);">Jeudi</h3>
+                 <ul class="uk-list uk-list-divider" style="font-family: 'Indie Flower', cursive; font-size: 1.1rem; color: #555;">
+                    <li>17h00 - Eveil Corporel (4-5 ans)</li>
+                    <li>18h00 - Initiation Danse (6-8 ans)</li>
+                    <li>19h00 - Barre au sol</li>
+                     <li>20h00 - Atelier Chorégraphique</li>
+                </ul>
+                <div class="tape tape-top-center"></div>
+            </div>
+        </div>
+
+        <!-- Friday -->
+        <div>
+            <div class="polaroid rotate-2" style="background: #ffebee; padding: 20px;">
+                <h3 class="font-handwritten uk-text-center" style="color: var(--accent-primary);">Vendredi</h3>
+                 <ul class="uk-list uk-list-divider" style="font-family: 'Indie Flower', cursive; font-size: 1.1rem; color: #555;">
+                    <li>17h30 - Funky Jazz (10-12 ans)</li>
+                    <li>18h30 - Ragga (Ados)</li>
+                    <li>19h30 - Modern Jazz (Adultes)</li>
+                     <li>20h30 - Stretching</li>
+                </ul>
+                 <div class="tape tape-corner-right"></div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="uk-container schedule-section uk-background-secondary-lighter">
-    <div class="uk-section">
-        <div class="uk-container">
-            <h3>Notre horaire parascolaire</h3>
-            <div class="uk-grid-match uk-child-width-1-4@m uk-child-width-1-2@s uk-text-center" uk-grid>
-                <div>
-                    <h3>Mercredi</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                </div>
-                <div>
-                    <h3>Jeudi</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                </div>
-                <div>
-                    <h3>Vendredi</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                </div>
+<div class="uk-container uk-margin-large-top">
+     <!-- Parascolaire Title -->
+    <div class="uk-flex uk-flex-center uk-margin-medium-bottom">
+        <h3 class="font-handwritten" style="border-bottom: 3px dashed var(--accent-primary); padding-bottom: 10px; display: inline-block; transform: rotate(1deg);">Parascolaire</h3>
+    </div>
+
+    <div class="uk-grid-match uk-child-width-1-3@m uk-child-width-1-1 uk-text-center" uk-grid>
+         <div>
+            <div class="sticky-note rotate-neg-2">
+                <h4 class="font-handwritten">Mercredi</h4>
+                <p>Activités récréatives et créatives pour les 6-12 ans.</p>
+            </div>
+        </div>
+         <div>
+            <div class="sticky-note rotate-1 blue">
+                <h4 class="font-handwritten">Jeudi</h4>
+                <p>Aide aux devoirs et jeux de société.</p>
+            </div>
+        </div>
+         <div>
+            <div class="sticky-note rotate-2 pink">
+                <h4 class="font-handwritten">Vendredi</h4>
+                <p>Initiation aux arts du spectacle.</p>
             </div>
         </div>
     </div>
 </div>
 
-<div class="uk-container schedule-section uk-background-secondary-lighter">
-    <div class="uk-section">
-        <div class="uk-container">
-            <h3>Nos salles</h3>
-            <div class="uk-grid-match uk-child-width-1-4@m uk-child-width-1-2@s uk-text-center" uk-grid>
-                <div>
-                    <h4>(1) Ecole St. François d'Assise</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                </div>
-                <div>
-                    <h4>(2) Ecole du Chenois</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                </div>
-                <div>
-                    <h4>(3) Ecole de l'Envol</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                </div>
-                <div>
-                    <h4>(4) Ecole Sacré Coeur Clos</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                </div>
+<div class="uk-container uk-margin-large-top uk-margin-large-bottom">
+     <div class="uk-card uk-card-default uk-card-body" style="border: 2px dashed #ccc; border-radius: 10px;">
+        <h3 class="uk-card-title uk-text-center font-handwritten" style="color: var(--accent-primary);">Nos Salles</h3>
+        <div class="uk-child-width-1-2@s uk-child-width-1-4@m uk-text-center uk-grid-match" uk-grid>
+             <div>
+                <p><strong>(1) Ecole St. François</strong><br>Rue des Ecoles, 1</p>
+            </div>
+            <div>
+                <p><strong>(2) Ecole du Chenois</strong><br>Avenue des Tilleuls, 5</p>
+            </div>
+            <div>
+                <p><strong>(3) Ecole de l'Envol</strong><br>Chemin du Vent, 12</p>
+            </div>
+            <div>
+                <p><strong>(4) Sacré Coeur Clos</strong><br>Place du Clos, 3</p>
             </div>
         </div>
     </div>

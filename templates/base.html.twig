@@ -20,11 +20,11 @@
         {% endblock %}
     </head>
     <header>
-        <nav class="uk-navbar-container uk-navbar-transparent uk-visible@s">
+        <nav class="uk-navbar-container uk-visible@s" style="z-index: 980; padding: 10px 0px">
             <div class="uk-container">
                 <div uk-navbar>
                     <div class="uk-navbar-left">
-                        <a class="uk-navbar-item uk-logo" href="{{path('app_home')}}" aria-label="Back to Home"><img src="{{ asset('images/logo.png') }}" alt="Alternate Text" /></a>
+                        <a class="uk-navbar-item uk-logo" href="{{path('app_home')}}" aria-label="Back to Home"><img src="{{ asset('images/logo.png') }}" width="80" alt="Alternate Text" /></a>
                     </div>
                     <div class="uk-navbar-center">
                         <ul class="uk-navbar-nav">
@@ -37,7 +37,7 @@
                 </div>
             </div>
         </nav>
-        <nav class="uk-navbar-container uk-navbar-transparent uk-hidden@s">
+        <nav class="uk-navbar-container uk-hidden@s" style="z-index: 980; padding: 10px 0px">
             <div class="uk-container small-nav">
                 <div uk-navbar>
                     <div class="uk-navbar-left">
@@ -52,7 +52,7 @@
                         </div>
                     </div>
                     <div class="uk-navbar-center">
-                        <a class="uk-navbar-item uk-logo" href="{{path('app_home')}}" aria-label="Back to Home"><img src="{{ asset('images/logo.png') }}" alt="Alternate Text" /></a>
+                        <a class="uk-navbar-item uk-logo" href="{{path('app_home')}}" aria-label="Back to Home"><img src="{{ asset('images/logo.png') }}" width="80" alt="Alternate Text" /></a>
                     </div>
                 </div>
             </div>
@@ -64,15 +64,15 @@
         <![endif]-->
         {% block body %}{% endblock %}
     </body>
-    <footer class="uk-background-secondary-lighter">
-        <div class="uk-section uk-section-small footer" id="footer">
+    <footer class="uk-position-relative uk-padding-large uk-padding-remove-bottom" style="background-color: var(--bg-primary);">
+        <div class="uk-section uk-section-small footer" id="footer" style="background-color: var(--bg-primary); border: none;">
             <div class="uk-container">
                 <div class="uk-text-center">
-                    <a target="_blank" href="https://www.instagram.com/its.place_net/" uk-icon="instagram"></a>
-                    <a target="_blank" href="https://www.linkedin.com/company/it-s-place/" uk-icon="linkedin"></a>
-                    <a target="_blank" href="https://wa.me/32477753577" uk-icon="whatsapp"></a>
+                    <a target="_blank" href="https://www.instagram.com/its.place_net/" uk-icon="instagram" class="uk-margin-small-right" style="color: var(--accent-primary);"></a>
+                    <a target="_blank" href="https://www.linkedin.com/company/it-s-place/" uk-icon="linkedin" class="uk-margin-small-right" style="color: var(--accent-primary);"></a>
+                    <a target="_blank" href="https://wa.me/32477753577" uk-icon="whatsapp" style="color: var(--accent-primary);"></a>
                     <br>
-                    <p class="copyright">&copy;2024 <a href="https://itsplace.net/">IT'S PLACE</a> | Tous droits réservés</p>
+                    <p class="copyright uk-margin-small-top" style="opacity: 0.8 !important;">&copy;2024 <a href="https://itsplace.net/" class="uk-link-reset" style="text-decoration: underline; color: var(--accent-primary);">IT'S PLACE</a> | Tous droits réservés</p>
                 </div>
             </div>
         </div>

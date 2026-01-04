@@ -3,46 +3,54 @@
 {% block title %}Hello Controller!{% endblock %}
 
 {% block body %}
-<div class="uk-section-default header-section">
-    <div class="uk-section uk-background-cover" style="background-image: url(images/pattern.jpg)">
+<div class="uk-section-default header-section" style="padding-bottom: 100px; position: relative;">
+    <div class="uk-section uk-flex uk-flex-middle" style="min-height: 80vh;">
         <div class="uk-container">
-            <div class="uk-text-center" uk-grid>
-                <div class="uk-width-1-2">
-                    <div class="uk-text-left">
-                        <h1 class="uk-padding-large uk-padding-remove-left">Bienvenue chez Danse Valou</h1>
-                        <h2 class="uk-padding-medium uk-padding-remove-left">Venez partager la magie et la passion de la danse dans la bonne humeur chez nous</h2>
-                        <a class="uk-margin-medium uk-margin-remove-left uk-button" href="#">Nous contacter</a>
+            <div class="" uk-grid>
+                <div class="uk-width-1-2@m uk-flex uk-flex-middle">
+                    <div class="uk-text-left uk-position-relative">
+                        <span class="font-handwritten rotate-neg-3" style="font-size: 2rem; position: absolute; top: -40px; left: 0; color: var(--accent-secondary);">Passion & Magie !</span>
+                        <h1 class="uk-heading-medium" style="color: var(--accent-primary); font-weight: 800; text-transform: uppercase;">Bienvenue chez <br>Danse Valou</h1>
+                        <h2 class="uk-text-lead uk-margin-medium-top" style="color: var(--text-primary); font-weight: 500;">Venez partager la magie et la passion de la danse dans la bonne humeur.</h2>
+                        <a class="uk-margin-medium-top uk-button uk-button-primary" href="#">Nous contacter</a>
                     </div>
                 </div>
-                <div class="uk-width-1-2">
-                    <img src="{{ asset('images/danser.png') }}" alt="Alternate Text" />
+                <div class="uk-width-1-2@m uk-visible@m uk-flex uk-flex-center uk-flex-middle">
+                    <div class="polaroid rotate-3 uk-position-relative" style="max-width: 450px;">
+                        <div class="tape tape-top-center"></div>
+                        <img src="{{ asset('images/danser.png') }}" alt="Danse Valou" />
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="uk-section uk-section-large uk-background-secondary-lighter">
+<div class="uk-section uk-section-large uk-background-secondary uk-light uk-position-relative">
     <div class="uk-container">
-        <h3>Notre histoire</h3>
+        <div class="uk-text-center uk-margin-bottom rotate-neg-1">
+             <h3 class="uk-text-uppercase font-handwritten" style="font-size: 3rem; color: #fff;">Notre histoire...</h3>
+        </div>
         <div class="uk-text-center" uk-grid>
             <div class="uk-width-1-2@m uk-width-1-1">
-                <video src="https://yootheme.com/site/images/media/yootheme-pro.mp4" width="1800" height="1200" loop muted playsinline uk-video="autoplay: inview"></video>
+                 <div class="polaroid rotate-neg-2 uk-position-relative" style="background: white; padding: 10px 10px 40px 10px;">
+                    <div class="tape tape-corner-left"></div>
+                    <div class="tape tape-corner-right"></div>
+                    <div style="overflow: hidden;">
+                        <video src="https://yootheme.com/site/images/media/yootheme-pro.mp4" width="1800" height="1200" loop muted playsinline uk-video="autoplay: inview"></video>
+                    </div>
+                    <p class="uk-text-muted uk-text-small uk-margin-small-top font-handwritten" style="color: #333 !important; font-size: 1.5rem;">Souvenirs de 1989</p>
+                 </div>
             </div>
-            <div class="uk-width-1-2@m uk-width-1-1">
-                <div class="uk-text-justify">
-                    <p>
+            <div class="uk-width-1-2@m uk-width-1-1 uk-flex uk-flex-middle">
+                <div class="uk-text-justify uk-padding-large uk-background-default uk-text-dark" style="transform: rotate(1deg); box-shadow: 5px 5px 0px rgba(0,0,0,0.1);">
+                    <p style="font-size: 1rem; color: #333;">
                         Tout a commencé en 1989, j'étais encore aux études à l'école de danse. On m'a proposé un remplacement de deux heures
                         de cours de danse classique à l'école du Sacré Coeur Clos de Waterloo. J'ai accepté, les petites avaient entre 6 à 8 ans. J'ai
                         alors proposé d'ajouter des heures en jazz pour les plus grandes. Puis, j'ai ajouté des cours pour les plus petites et de fil en
                         aiguilles, j'ai été demandée au clos... Je donnais des cours dans différentes villes de Belgique :
-                        Tournai, Jodoigne, Anderlecht, Uccle, St. Gilles, Etterbeek, Braine L'Alleud, …
-                        Petit à petit mon école a grandi, mes petites élèves sont devenues grandes et maintenant elles viennent déposer leurs
-                        enfants chez moi. Ma priorité a toujours été que chacun se sente bien chez moi. Tous les élèves ont leur place.
-                        Il est vrai que je n'ai pas de jolies salles dotées de beaux miroirs et de beaux vestiaires. Quelques fois cela me peine mais
-                        on m'a très souvent dit: "peut-être que la salle n'est pas très jolie, mais ce que l'on ressent c'est l'amour et la joie entre nous
-                        et c'est ça qui fait que l'on se sent bien".
-                        J'ai ouvert la porte à d'autres styles pour compléter mon équipe mais j'ai toujours été entourée de belles personnes qui
-                        donnent énormément d'amour et de soleil dans ma vie. Je voudrais tant les remercier.
+                        Tournai, Jodoigne, Anderlecht, Uccle, St. Gilles, Etterbeek, Braine L'Alleud.
+                        <br><br>
+                        <span class="font-handwritten" style="font-size: 1.2rem; color: var(--accent-primary);">"Ma priorité a toujours été que chacun se sente bien chez moi."</span>
                     </p>
                 </div>
             </div>
@@ -50,48 +58,60 @@
     </div>
 </div>
 
-<div class="uk-section uk-section-secondary-darker" style="min-height:300px;">
-    <div class="uk-container">
-        <h3>Une année chez Danse Valou</h3>
-        <div class="uk-text-center" uk-grid>
-            <div class="uk-width-1-2@m uk-width-1-1">
-                <div class="uk-text-justify">
+
+
+<div class="marquee-wrapper">
+  <div class="marquee">
+    <span class="marquee-text">
+        Passion & Magie • Danse Valou • Rejoignez-nous • Passion & Magie • Danse Valou • Rejoignez-nous •
+    </span>
+  </div>
+</div>
+
+<div class="uk-section" style="min-height:300px; background-color: var(--bg-secondary); position: relative;">
+
+    <div class="uk-container uk-margin-large-top">
+        <h3 style="color: var(--accent-primary); transform: rotate(-1deg);" class="uk-text-center">Une année chez Danse Valou</h3>
+        <div class="uk-text-center uk-margin-large-top" uk-grid>
+            <div class="uk-width-1-2@m uk-width-1-1 uk-flex uk-flex-middle">
+                <div class="uk-text-justify uk-padding uk-background-muted" style="border-left: 4px solid var(--accent-primary);">
+                    <p class="uk-text-lead font-handwritten" style="color: var(--accent-primary);">Le mot de la fin...</p>
                     <p>
-                        Tout a commencé en 1989, j'étais encore aux études à l'école de danse. On m'a proposé un remplacement de deux heures
-                        de cours de danse classique à l'école du Sacré Coeur Clos de Waterloo. J'ai accepté, les petites avaient entre 6 à 8 ans. J'ai
-                        alors proposé d'ajouter des heures en jazz pour les plus grandes. Puis, j'ai ajouté des cours pour les plus petites et de fil en
-                        aiguilles, j'ai été demandée au clos... Je donnais des cours dans différentes villes de Belgique :
-                        Tournai, Jodoigne, Anderlecht, Uccle, St. Gilles, Etterbeek, Braine L'Alleud, …
-                        Tout a commencé en 1989, j'étais encore aux études à l'école de danse. On m'a proposé un remplacement de deux heures
-                        de cours de danse classique à l'école du Sacré Coeur Clos de Waterloo. J'ai accepté, les petites avaient entre 6 à 8 ans. J'ai
-                        alors proposé d'ajouter des heures en jazz pour les plus grandes. Puis, j'ai ajouté des cours pour les plus petites et de fil en
-                        aiguilles, j'ai été demandée au clos... Je donnais des cours dans différentes villes de Belgique :
-                        Tournai, Jodoigne, Anderlecht, Uccle, St. Gilles, Etterbeek, Braine L'Alleud, …
+                        Tout a commencé en 1989... aujourd'hui nous continuons d'écrire cette histoire ensemble. 
+                        Chaque année est une nouvelle page de notre album souvenir.
                     </p>
                 </div>
             </div>
             <div class="uk-width-1-2@m uk-width-1-1">
                  <div class="uk-container uk-margin">
-                    <div class="uk-child-width-1-3 uk-child-width-1-2@s" uk-grid="masonry: pack;" uk-lightbox="animation: scale">
+                    <div class="uk-child-width-1-2" uk-grid="masonry: true;" uk-lightbox="animation: scale">
                         <div>
-                            <a class="uk-inline" href="images/design.jpg" data-caption="Caption 1">
-                                <img src="images/design.jpg" width="1800" height="1200" alt="">
-                            </a>
+                            <div class="polaroid rotate-neg-2">
+                                <a class="uk-inline" href="images/design.jpg" data-caption="Caption 1">
+                                    <img src="images/design.jpg" alt="">
+                                </a>
+                            </div>
                         </div>
-                         <div>
-                            <a class="uk-inline" href="images/design.jpg" data-caption="Caption 1">
-                                <img src="images/design.jpg" width="1800" height="1200" alt="">
-                            </a>
+                         <div class="uk-margin-large-top">
+                            <div class="polaroid rotate-2">
+                                <a class="uk-inline" href="images/design.jpg" data-caption="Caption 1">
+                                    <img src="images/design.jpg" alt="">
+                                </a>
+                            </div>
                         </div>
                         <div>
-                            <a class="uk-inline" href="images/design.jpg" data-caption="Caption 1">
-                                <img src="images/design.jpg" width="1800" height="1200" alt="">
-                            </a>
+                            <div class="polaroid rotate-1">
+                                <a class="uk-inline" href="images/design.jpg" data-caption="Caption 1">
+                                    <img src="images/design.jpg" alt="">
+                                </a>
+                            </div>
                         </div>
-                         <div>
-                            <a class="uk-inline" href="images/design.jpg" data-caption="Caption 1">
-                                <img src="images/design.jpg" width="1800" height="1200" alt="">
-                            </a>
+                         <div class="uk-margin-large-top">
+                            <div class="polaroid rotate-neg-1">
+                                <a class="uk-inline" href="images/design.jpg" data-caption="Caption 1">
+                                    <img src="images/design.jpg" alt="">
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -99,34 +119,37 @@
         </div>
     </div>
 </div>
-             
-<div class="uk-section uk-background-secondary-lighter" style="min-height:300px;">
-    <div class="uk-container">
-        <h3>Notre histoire s'écrit depuis </h3>
+<!-- Counter Section -->
+<div class="uk-section" style="min-height:300px; background-image: url('{{ asset('images/pattern.jpg') }}'); background-size: cover; position: relative;">
+    <!-- Top Tape -->
+     <div class="tape" style="top: -17px; left: 50%; transform: translateX(-50%) rotate(0deg); width: 200px;"></div>
+    <div class="uk-overlay-default uk-position-cover" style="opacity: 0.8;"></div>
+    <div class="uk-container uk-position-relative">
+        <h3 style="color: var(--accent-primary); text-align: center; margin-bottom: 50px;">Notre histoire s'écrit depuis...</h3>
         <div id="timeCounter">Calculating...</div>
     </div>
 </div>
 
-<div class="uk-section uk-section-large uk-section-secondary-darker" style="min-height:300px;">
+<div class="uk-section uk-section-large" style="min-height:300px; background-color: var(--bg-secondary);">
     <div class="uk-container">
-        <h3>F.A.Q</h3>
-        <ul uk-accordion="multiple: true">
+        <h3 style="color: var(--accent-primary);">F.A.Q</h3>
+        <ul uk-accordion="multiple: true" class="uk-accordion">
             <li class="uk-open">
-                <a class="uk-accordion-title" href>Item 1</a>
+                <a class="uk-accordion-title" href style="color: var(--accent-primary); font-weight: 600;">Item 1</a>
                 <div class="uk-accordion-content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p style="color: var(--text-primary);">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
             </li>
             <li>
-                <a class="uk-accordion-title" href>Item 2</a>
+                <a class="uk-accordion-title" href style="color: var(--accent-primary); font-weight: 600;">Item 2</a>
                 <div class="uk-accordion-content">
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor reprehenderit.</p>
+                    <p style="color: var(--text-primary);">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor reprehenderit.</p>
                 </div>
             </li>
             <li>
-                <a class="uk-accordion-title" href>Item 3</a>
+                <a class="uk-accordion-title" href style="color: var(--accent-primary); font-weight: 600;">Item 3</a>
                 <div class="uk-accordion-content">
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat proident.</p>
+                    <p style="color: var(--text-primary);">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat proident.</p>
                 </div>
             </li>
         </ul>
@@ -147,19 +170,32 @@
         const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
         // Display the result
+        // Display the result
         document.getElementById("timeCounter").innerHTML =
-            `<div class="uk-child-width-1-4@m uk-child-width-1-2" uk-grid>
+            `<div class="uk-child-width-1-2@s uk-child-width-1-4@m uk-grid-match" uk-grid>
                 <div>
-                    <div class="uk-height-small counter uk-card uk-card-default uk-card-body uk-flex uk-flex-center uk-flex-middle">${days} <p> jours</p></div>
+                    <div class="sticky-note rotate-neg-2 uk-flex uk-flex-column uk-flex-center uk-flex-middle">
+                        <span class="font-handwritten" style="color: var(--accent-primary); font-size: 3rem; line-height: 1;">${days}</span>
+                        <p class="uk-margin-remove font-handwritten" style="font-size: 1.2rem;">Jours</p>
+                    </div>
                 </div>
                 <div>
-                    <div class="uk-height-small counter uk-card uk-card-default uk-card-body uk-flex uk-flex-center uk-flex-middle">${hours} <p> heures</p></div>
+                    <div class="sticky-note pink rotate-1 uk-flex uk-flex-column uk-flex-center uk-flex-middle">
+                        <span class="font-handwritten" style="color: var(--accent-primary); font-size: 3rem; line-height: 1;">${hours}</span>
+                        <p class="uk-margin-remove font-handwritten" style="font-size: 1.2rem;">Heures</p>
+                    </div>
                 </div>
                 <div>
-                    <div class="uk-height-small counter uk-card uk-card-default uk-card-body uk-flex uk-flex-center uk-flex-middle">${minutes} <p> minutes</p></div>
+                    <div class="sticky-note blue rotate-neg-1 uk-flex uk-flex-column uk-flex-center uk-flex-middle">
+                        <span class="font-handwritten" style="color: var(--accent-primary); font-size: 3rem; line-height: 1;">${minutes}</span>
+                        <p class="uk-margin-remove font-handwritten" style="font-size: 1.2rem;">Minutes</p>
+                    </div>
                 </div>
                 <div>
-                    <div class="uk-height-small counter uk-card uk-card-default uk-card-body uk-flex uk-flex-center uk-flex-middle">${seconds} <p> secondes</p></div>
+                    <div class="sticky-note rotate-2 uk-flex uk-flex-column uk-flex-center uk-flex-middle">
+                        <span class="font-handwritten" style="color: var(--accent-primary); font-size: 3rem; line-height: 1;">${seconds}</span>
+                        <p class="uk-margin-remove font-handwritten" style="font-size: 1.2rem;">Secondes</p>
+                    </div>
                 </div>
             </div>`;
     }
