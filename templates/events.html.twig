@@ -1,82 +1,142 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello Controller!{% endblock %}
-{% block stylesheets %}
-    {{ encore_entry_link_tags('events') }}
+{% block title %}Événements à venir – École de danse à Waterloo – Danse Valou{% endblock %}
+{% block meta_description %}Prochains événements de Danse Valou à Waterloo : inscriptions, reprise des cours, spectacles de Noël et représentations en Brabant Wallon.{% endblock %}
+{% block stylesheets %}{{ encore_entry_link_tags('events') }}{% endblock %}
+{% block structured_data %}
+<script type="application/ld+json">
+[
+    {"@context":"https://schema.org","@type":"Event","name":"Début des inscriptions – Danse Valou Waterloo","startDate":"2025-08-01","location":{"@type":"Place","name":"Danse Valou – Waterloo","address":{"@type":"PostalAddress","addressLocality":"Waterloo","postalCode":"1410","addressCountry":"BE"}},"organizer":{"@type":"DanceSchool","name":"Danse Valou"}},
+    {"@context":"https://schema.org","@type":"Event","name":"Reprise des cours de danse à Waterloo","startDate":"2025-09-01","location":{"@type":"Place","name":"Danse Valou – Waterloo","address":{"@type":"PostalAddress","addressLocality":"Waterloo","postalCode":"1410","addressCountry":"BE"}},"organizer":{"@type":"DanceSchool","name":"Danse Valou"}},
+    {"@context":"https://schema.org","@type":"Event","name":"Spectacle de Noël – Danse Valou Waterloo","startDate":"2025-12-01","location":{"@type":"Place","name":"Théâtre du Centre – Waterloo","address":{"@type":"PostalAddress","addressLocality":"Waterloo","postalCode":"1410","addressCountry":"BE"}},"organizer":{"@type":"DanceSchool","name":"Danse Valou"}}
+]
+</script>
 {% endblock %}
 
 {% block body %}
-<div class="uk-section uk-section-large" style="background-color: var(--bg-primary);">
-    <div class="uk-container">
-        
-        <!-- Header -->
-        <div class="uk-text-center uk-margin-large-bottom">
-             <div class="uk-inline">
-                 <div class="tape tape-top-center"></div>
-                 <h1 class="font-handwritten" style="background: #fff; padding: 20px 40px; transform: rotate(1deg); box-shadow: 0 4px 15px rgba(0,0,0,0.1); color: var(--accent-primary);">Evénements à venir</h1>
-            </div>
-        </div>
 
-        <!-- Event 1 -->
-        <div class="uk-grid-large uk-flex-middle" uk-grid>
-            <div class="uk-width-1-2@s">
-                 <div class="polaroid rotate-neg-2">
-                     <div class="tape tape-corner-left"></div>
-                    <div class="uk-overflow-hidden" style="height: 300px;">
-                        <img src="images/img.png" alt="Event 1" style="object-fit: cover; height: 100%; width: 100%;">
-                    </div>
-                </div>
-            </div>
-            <div class="uk-width-1-2@s">
-                <div class="sticky-note rotate-1" style="background: #fff9c4; padding: 40px;">
-                    <h2 class="font-handwritten" style="color: var(--accent-primary);"><span class="uk-margin-small-right" uk-icon="icon: calendar; ratio: 1.5"></span> Aout 2025</h2>
-                    <h3 style="margin-top: 10px;">Début des incriptions</h3>
-                    <p class="uk-text-meta"><span class="uk-margin-small-right" uk-icon="icon: location; ratio: 1"></span> Salle Principale</p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores cumque omnis quae quasi esse voluptas, aliquam, reprehenderit voluptatem aliquid officia error.</p>
-                </div>
-            </div>
+{# ── PAGE HEADER ─────────────────────────────────────────── #}
+<section style="background: var(--bg-primary); padding: 60px 0 0;">
+    <div class="uk-container uk-text-center">
+        <div class="reveal">
+            <span class="section-chip">Agenda</span>
         </div>
-
-        <!-- Event 2 -->
-        <div class="uk-grid-large uk-flex-middle uk-margin-xlarge-top" uk-grid>
-            <div class="uk-width-1-2@s uk-flex-last@s">
-                 <div class="polaroid rotate-2">
-                     <div class="tape tape-corner-right"></div>
-                    <div class="uk-overflow-hidden" style="height: 300px;">
-                        <img src="images/img.png" alt="Event 2" style="object-fit: cover; height: 100%; width: 100%;">
-                    </div>
-                </div>
-            </div>
-            <div class="uk-width-1-2@s">
-                 <div class="sticky-note rotate-neg-1 pink" style="padding: 40px;">
-                    <h2 class="font-handwritten" style="color: var(--accent-primary);"><span class="uk-margin-small-right" uk-icon="icon: calendar; ratio: 1.5"></span> Septembre 2025</h2>
-                    <h3 style="margin-top: 10px;">Reprise des cours</h3>
-                    <p class="uk-text-meta"><span class="uk-margin-small-right" uk-icon="icon: location; ratio: 1"></span> Toutes Salles</p>
-                    <p>Sed laborum commodi, assumenda iure quo suscipit enim ipsa molestiae asperiores, ullam tenetur repellendus nostrum. Labore, velit deserunt aperiam voluptatem.</p>
-                </div>
-            </div>
+        <div class="reveal reveal-delay-1" style="margin: 16px 0 8px; display: inline-block; position: relative;">
+            <div class="tape tape-top-center"></div>
+            <h1 class="font-handwritten page-title-note rotate-1">Événements à venir</h1>
         </div>
-
-        <!-- Event 3 -->
-        <div class="uk-grid-large uk-flex-middle uk-margin-xlarge-top" uk-grid>
-            <div class="uk-width-1-2@s">
-                 <div class="polaroid rotate-neg-1">
-                     <div class="tape tape-top-center"></div>
-                    <div class="uk-overflow-hidden" style="height: 300px;">
-                        <img src="images/img.png" alt="Event 3" style="object-fit: cover; height: 100%; width: 100%;">
-                    </div>
-                </div>
-            </div>
-            <div class="uk-width-1-2@s">
-                 <div class="sticky-note rotate-2 blue" style="padding: 40px;">
-                    <h2 class="font-handwritten" style="color: var(--accent-primary);"><span class="uk-margin-small-right" uk-icon="icon: calendar; ratio: 1.5"></span> Décembre 2025</h2>
-                    <h3 style="margin-top: 10px;">Spectacle de Noël</h3>
-                    <p class="uk-text-meta"><span class="uk-margin-small-right" uk-icon="icon: location; ratio: 1"></span> Théâtre du Centre</p>
-                    <p>Rerum aspernatur, dolorem mollitia vitae officiis atque qui dolor. Maiores cumque omnis quae quasi esse voluptas.</p>
-                </div>
-            </div>
-        </div>
-
+        <p class="reveal reveal-delay-2" style="color: var(--text-secondary); max-width: 500px; margin: 20px auto 0;">
+            Ne manquez aucun moment important de la vie de Danse Valou à <strong>Waterloo</strong>.
+        </p>
     </div>
-</div>
+</section>
+
+{# ── EVENTS TIMELINE ─────────────────────────────────────── #}
+<section class="events-page" style="background: var(--bg-primary);">
+    <div class="uk-container" style="max-width: 900px;">
+
+        {# Vertical line #}
+        <div style="position: relative;">
+            <div style="position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%); width: 2px; background: linear-gradient(to bottom, transparent, rgba(164,22,74,0.2) 8%, rgba(164,22,74,0.2) 92%, transparent); pointer-events: none; z-index: 0;"></div>
+
+            {# ─── Event 1 ─────────────────────────── #}
+            <div class="event-row reveal" style="display: grid; grid-template-columns: 1fr 60px 1fr; align-items: center; margin-bottom: 80px; position: relative; gap: 24px;">
+                <div class="event-image-col">
+                    <div class="polaroid rotate-neg-2">
+                        <div class="tape tape-corner-left"></div>
+                        <div style="overflow: hidden; height: 260px;">
+                            <img src="{{ asset('images/img.png') }}"
+                                 alt="Début des inscriptions – Danse Valou août 2025"
+                                 style="object-fit: cover; height: 100%; width: 100%;">
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; justify-content: center; position: relative; z-index: 2;">
+                    <div style="width: 18px; height: 18px; background: var(--accent-primary); border-radius: 50%; border: 3px solid var(--bg-primary); box-shadow: 0 0 0 4px rgba(164,22,74,0.2);"></div>
+                </div>
+                <div class="event-content-col">
+                    <div class="sticky-note rotate-1" style="padding: 28px;">
+                        <span class="event-date-badge">
+                            <span uk-icon="icon: calendar; ratio: 0.85"></span>
+                            Août 2025
+                        </span>
+                        <h2 style="font-size: 1.4rem; margin: 12px 0 8px; color: var(--text-primary);">Début des inscriptions</h2>
+                        <p style="color: var(--text-muted); font-size: 0.82rem; font-weight: 600; margin-bottom: 14px; display: flex; align-items: center; gap: 6px;">
+                            <span uk-icon="icon: location; ratio: 0.85"></span> Salle Principale
+                        </p>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7; margin: 0;">
+                            Les inscriptions pour la nouvelle saison sont ouvertes. Réservez votre place dès maintenant !
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            {# ─── Event 2 ─────────────────────────── #}
+            <div class="event-row reveal" style="display: grid; grid-template-columns: 1fr 60px 1fr; align-items: center; margin-bottom: 80px; position: relative; gap: 24px;">
+                <div class="event-content-col">
+                    <div class="sticky-note pink rotate-neg-1" style="padding: 28px;">
+                        <span class="event-date-badge">
+                            <span uk-icon="icon: calendar; ratio: 0.85"></span>
+                            Septembre 2025
+                        </span>
+                        <h2 style="font-size: 1.4rem; margin: 12px 0 8px; color: var(--text-primary);">Reprise des cours</h2>
+                        <p style="color: var(--text-muted); font-size: 0.82rem; font-weight: 600; margin-bottom: 14px; display: flex; align-items: center; gap: 6px;">
+                            <span uk-icon="icon: location; ratio: 0.85"></span> Toutes salles
+                        </p>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7; margin: 0;">
+                            C'est la rentrée ! Retrouvez vos camarades et préparez une nouvelle saison pleine de magie.
+                        </p>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; justify-content: center; position: relative; z-index: 2;">
+                    <div style="width: 18px; height: 18px; background: var(--accent-primary); border-radius: 50%; border: 3px solid var(--bg-primary); box-shadow: 0 0 0 4px rgba(164,22,74,0.2);"></div>
+                </div>
+                <div class="event-image-col">
+                    <div class="polaroid rotate-2">
+                        <div class="tape tape-corner-right"></div>
+                        <div style="overflow: hidden; height: 260px;">
+                            <img src="{{ asset('images/img.png') }}"
+                                 alt="Reprise des cours – Danse Valou septembre 2025"
+                                 style="object-fit: cover; height: 100%; width: 100%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {# ─── Event 3 ─────────────────────────── #}
+            <div class="event-row reveal" style="display: grid; grid-template-columns: 1fr 60px 1fr; align-items: center; position: relative; gap: 24px;">
+                <div class="event-image-col">
+                    <div class="polaroid rotate-neg-1">
+                        <div class="tape tape-top-center"></div>
+                        <div style="overflow: hidden; height: 260px;">
+                            <img src="{{ asset('images/img.png') }}"
+                                 alt="Spectacle de Noël – Danse Valou décembre 2025"
+                                 style="object-fit: cover; height: 100%; width: 100%;">
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; justify-content: center; position: relative; z-index: 2;">
+                    <div style="width: 18px; height: 18px; background: var(--accent-primary); border-radius: 50%; border: 3px solid var(--bg-primary); box-shadow: 0 0 0 4px rgba(164,22,74,0.2);"></div>
+                </div>
+                <div class="event-content-col">
+                    <div class="sticky-note blue rotate-1" style="padding: 28px;">
+                        <span class="event-date-badge">
+                            <span uk-icon="icon: calendar; ratio: 0.85"></span>
+                            Décembre 2025
+                        </span>
+                        <h2 style="font-size: 1.4rem; margin: 12px 0 8px; color: var(--text-primary);">Spectacle de Noël</h2>
+                        <p style="color: var(--text-muted); font-size: 0.82rem; font-weight: 600; margin-bottom: 14px; display: flex; align-items: center; gap: 6px;">
+                            <span uk-icon="icon: location; ratio: 0.85"></span> Théâtre du Centre
+                        </p>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7; margin: 0;">
+                            Le grand rendez-vous annuel ! Venez applaudir nos élèves sur scène pour le spectacle de fin d'année.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
 {% endblock %}

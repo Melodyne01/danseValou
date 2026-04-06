@@ -1,34 +1,25 @@
 export function initMarquee() {
-    const text = document.querySelector('.marquee-text');
-    if (!text) return;
+    const wrapper = document.querySelector('.marquee-wrapper');
+    if (!wrapper) return;
 
-    let lastScrollY = window.scrollY;
-    let position = 50;
-    let time = 0;
+    // Build the double-content track for seamless infinite loop
+    const track = wrapper.querySelector('.marquee-track');
+    if (!track) return;
 
-    const speed = 0.7;        // base movement speed
-    const waveAmplitude = 20; // px
-    const waveFrequency = 0;
+    const inner = track.querySelector('.marquee-inner');
+    if (!inner) return;
 
-    function animate() {
-        const currentScrollY = window.scrollY;
-        const delta = currentScrollY - lastScrollY;
-        lastScrollY = currentScrollY;
+    // Clone inner content for seamless loop
+    const clone = inner.cloneNode(true);
+    track.appendChild(clone);
 
-        // Move forward on scroll down, backward on scroll up
-        position -= delta * speed;
-
-        // Wave effect
-        time += 0.00;
-        const waveY = Math.sin(time + position * waveFrequency) * waveAmplitude;
-
-        text.style.transform = `
-            translateX(${position}px)
-            translateY(${waveY}px)
-        `;
-
-        requestAnimationFrame(animate);
-    }
-
-    animate();
+    // Pause on hover
+    wrapper.addEventListener('mouseenter', () => {
+        inner.style.animationPlayState = 'paused';
+        clone.style.animationPlayState = 'paused';
+    });
+    wrapper.addEventListener('mouseleave', () => {
+        inner.style.animationPlayState = 'running';
+        clone.style.animationPlayState = 'running';
+    });
 }

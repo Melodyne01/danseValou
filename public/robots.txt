@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /_profiler/
+Disallow: /_wdt/
+
+Sitemap: /sitemap.xml
+LLMs: /llms.txt

@@ -1,10 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Danse Valou – École de danse à Waterloo (Belgique){% endblock %}</title>
+        <meta name="description" content="{% block meta_description %}Danse Valou, école de danse à Waterloo depuis 1989. Cours de jazz, classique, contemporain, hip-hop, yoga et plus pour tous les âges. Inscrivez-vous !{% endblock %}">
+        <link rel="canonical" href="{% block canonical %}{{ app.request.uri }}{% endblock %}">
+
+        <!-- Open Graph -->
+        <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+        <meta property="og:locale" content="fr_BE">
+        <meta property="og:site_name" content="Danse Valou">
+        <meta property="og:title" content="{% block og_title %}{{ block('title') }}{% endblock %}">
+        <meta property="og:description" content="{% block og_description %}{{ block('meta_description') }}{% endblock %}">
+        <meta property="og:url" content="{{ app.request.uri }}">
+        <meta property="og:image" content="{% block og_image %}{{ absolute_url(asset('images/logo.png')) }}{% endblock %}">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="{{ block('og_title') }}">
+        <meta name="twitter:description" content="{{ block('og_description') }}">
+        <meta name="twitter:image" content="{{ block('og_image') }}">
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
+        <link rel="apple-touch-icon" href="{{ asset('images/logo.png') }}">
+
+        <!-- Structured Data -->
+        {% block structured_data %}
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "DanceSchool",
+            "name": "Danse Valou",
+            "description": "École de danse à Waterloo (Brabant Wallon, Belgique), fondée en 1989. Cours de jazz, classique, contemporain, hip-hop, yoga et éveil corporel pour tous les âges.",
+            "foundingDate": "1989",
+            "url": "{{ app.request.schemeAndHttpHost }}",
+            "logo": "{{ absolute_url(asset('images/logo.png')) }}",
+            "image": "{{ absolute_url(asset('images/logo.png')) }}",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Waterloo",
+                "postalCode": "1410",
+                "addressRegion": "Brabant Wallon",
+                "addressCountry": "BE"
+            },
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+32477753577",
+                "contactType": "customer service",
+                "availableLanguage": "French"
+            },
+            "sameAs": [
+                "https://www.instagram.com/its.place_net/",
+                "https://www.linkedin.com/company/it-s-place/"
+            ]
+        }
+        </script>
+        {% endblock %}
+
         <!-- UIkit CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.16/dist/css/uikit.min.css" />
         <!-- UIkit JS -->
@@ -19,12 +73,13 @@
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
+    <body class="uk-background-secondary">
     <header>
         <nav class="uk-navbar-container uk-visible@s" style="z-index: 980; padding: 10px 0px">
             <div class="uk-container">
                 <div uk-navbar>
                     <div class="uk-navbar-left">
-                        <a class="uk-navbar-item uk-logo" href="{{path('app_home')}}" aria-label="Back to Home"><img src="{{ asset('images/logo.png') }}" width="80" alt="Alternate Text" /></a>
+                        <a class="uk-navbar-item uk-logo" href="{{path('app_home')}}" aria-label="Retour à l'accueil Danse Valou"><img src="{{ asset('images/logo.png') }}" width="80" alt="Logo Danse Valou" /></a>
                     </div>
                     <div class="uk-navbar-center">
                         <ul class="uk-navbar-nav">
@@ -41,7 +96,7 @@
             <div class="uk-container small-nav">
                 <div uk-navbar>
                     <div class="uk-navbar-left">
-                        <a class="uk-navbar-toggle uk-navbar-toggle-animate" uk-navbar-toggle-icon href="#"></a>
+                        <a class="uk-navbar-toggle uk-navbar-toggle-animate" uk-navbar-toggle-icon href="#" aria-label="Menu de navigation"></a>
                         <div class="uk-navbar-dropdown">
                             <ul class="uk-nav uk-navbar-dropdown-nav">
                                 <li><a href="{{path('app_schedule')}}">Horaire</a></li>
@@ -52,29 +107,26 @@
                         </div>
                     </div>
                     <div class="uk-navbar-center">
-                        <a class="uk-navbar-item uk-logo" href="{{path('app_home')}}" aria-label="Back to Home"><img src="{{ asset('images/logo.png') }}" width="80" alt="Alternate Text" /></a>
+                        <a class="uk-navbar-item uk-logo" href="{{path('app_home')}}" aria-label="Retour à l'accueil Danse Valou"><img src="{{ asset('images/logo.png') }}" width="80" alt="Logo Danse Valou" /></a>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
-    <body class="uk-background-secondary">
-         <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
         {% block body %}{% endblock %}
-    </body>
     <footer class="uk-position-relative uk-padding-large uk-padding-remove-bottom" style="background-color: var(--bg-primary);">
         <div class="uk-section uk-section-small footer" id="footer" style="background-color: var(--bg-primary); border: none;">
             <div class="uk-container">
                 <div class="uk-text-center">
-                    <a target="_blank" href="https://www.instagram.com/its.place_net/" uk-icon="instagram" class="uk-margin-small-right" style="color: var(--accent-primary);"></a>
-                    <a target="_blank" href="https://www.linkedin.com/company/it-s-place/" uk-icon="linkedin" class="uk-margin-small-right" style="color: var(--accent-primary);"></a>
-                    <a target="_blank" href="https://wa.me/32477753577" uk-icon="whatsapp" style="color: var(--accent-primary);"></a>
-                    <br>
-                    <p class="copyright uk-margin-small-top" style="opacity: 0.8 !important;">&copy;2024 <a href="https://itsplace.net/" class="uk-link-reset" style="text-decoration: underline; color: var(--accent-primary);">IT'S PLACE</a> | Tous droits réservés</p>
+                    <div style="margin-bottom: 16px; display: flex; justify-content: center; gap: 8px; flex-wrap: wrap;">
+                        <a target="_blank" href="https://www.instagram.com/its.place_net/" uk-icon="instagram" class="social-link" aria-label="Instagram Danse Valou"></a>
+                        <a target="_blank" href="https://www.linkedin.com/company/it-s-place/" uk-icon="linkedin" class="social-link" aria-label="LinkedIn Danse Valou"></a>
+                        <a target="_blank" href="https://wa.me/32477753577" uk-icon="whatsapp" class="social-link" aria-label="Contact WhatsApp"></a>
+                    </div>
+                    <p class="copyright" style="opacity: 0.65; font-size: 0.8rem; margin: 0;">&copy;2024 <a href="https://itsplace.net/" class="uk-link-reset" style="text-decoration: underline; color: var(--accent-primary);">IT'S PLACE</a> | Tous droits réservés</p>
                 </div>
             </div>
         </div>
     </footer>
+    </body>
 </html>

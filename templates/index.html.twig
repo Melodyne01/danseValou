@@ -1,115 +1,210 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello Controller!{% endblock %}
+{% block title %}Danse Valou – École de danse à Waterloo (Belgique) depuis 1989{% endblock %}
+{% block meta_description %}École de danse à Waterloo depuis 1989. Cours de jazz, classique, contemporain, hip-hop, yoga et éveil corporel pour enfants et adultes. Inscriptions ouvertes !{% endblock %}
+{% block og_image %}{{ absolute_url(asset('images/danser.png')) }}{% endblock %}
+{% block structured_data %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "DanceSchool",
+    "name": "Danse Valou",
+    "description": "École de danse à Waterloo (Brabant Wallon, Belgique), fondée en 1989. Cours de jazz, classique, contemporain, hip-hop, yoga et éveil corporel pour tous les âges.",
+    "foundingDate": "1989",
+    "url": "{{ app.request.schemeAndHttpHost }}",
+    "logo": "{{ absolute_url(asset('images/logo.png')) }}",
+    "image": "{{ absolute_url(asset('images/danser.png')) }}",
+    "address": {"@type": "PostalAddress", "addressLocality": "Waterloo", "postalCode": "1410", "addressRegion": "Brabant Wallon", "addressCountry": "BE"},
+    "contactPoint": {"@type": "ContactPoint", "telephone": "+32477753577", "contactType": "customer service", "availableLanguage": "French"},
+    "sameAs": ["https://www.instagram.com/its.place_net/", "https://www.linkedin.com/company/it-s-place/"]
+}
+</script>
+{% endblock %}
 
 {% block body %}
-<div class="uk-section-default header-section" style="padding-bottom: 100px; position: relative;">
-    <div class="uk-section uk-flex uk-flex-middle" style="min-height: 80vh;">
+
+{# ── HERO ─────────────────────────────────────────────────── #}
+<section class="header-section" style="padding-bottom: 80px; position: relative; overflow: hidden;">
+    <div class="uk-section uk-flex uk-flex-middle" style="min-height: 88vh;">
         <div class="uk-container">
-            <div class="" uk-grid>
-                <div class="uk-width-1-2@m uk-flex uk-flex-middle">
-                    <div class="uk-text-left uk-position-relative">
-                        <span class="font-handwritten rotate-neg-3" style="font-size: 2rem; position: absolute; top: -40px; left: 0; color: var(--accent-secondary);">Passion & Magie !</span>
-                        <h1 class="uk-heading-medium" style="color: var(--accent-primary); font-weight: 800; text-transform: uppercase;">Bienvenue chez <br>Danse Valou</h1>
-                        <h2 class="uk-text-lead uk-margin-medium-top" style="color: var(--text-primary); font-weight: 500;">Venez partager la magie et la passion de la danse dans la bonne humeur.</h2>
-                        <a class="uk-margin-medium-top uk-button uk-button-primary" href="#">Nous contacter</a>
+            <div uk-grid class="uk-flex-middle">
+
+                {# Left copy #}
+                <div class="uk-width-1-2@m uk-width-1-1">
+                    <div class="uk-position-relative" style="padding-top: 20px;">
+                        <div class="reveal">
+                            <span class="hero-badge">Passion &amp; Magie depuis 1989</span>
+                        </div>
+                        <h1 class="reveal reveal-delay-1 uk-heading-medium" style="color: var(--accent-primary); font-weight: 900; margin-bottom: 20px;">
+                            Bienvenue chez<br>Danse Valou
+                        </h1>
+                        <p class="reveal reveal-delay-2" style="font-size: 1.1rem; color: var(--text-secondary); max-width: 460px; margin-bottom: 36px;">
+                            Votre école de danse à <strong>Waterloo</strong>, en Brabant Wallon, depuis 1989.
+                            Venez partager la magie et la passion de la danse dans la bonne humeur.
+                            Des cours pour tous les âges, tous les niveaux.
+                        </p>
+                        <div class="reveal reveal-delay-3" style="display: flex; gap: 14px; flex-wrap: wrap;">
+                            <a class="uk-button uk-button-primary" href="{{ path('app_schedule') }}">
+                                <span>Voir les cours</span>
+                            </a>
+                            <a class="uk-button uk-button-default" href="https://wa.me/32477753577" target="_blank">
+                                Nous contacter
+                            </a>
+                        </div>
                     </div>
                 </div>
+
+                {# Right polaroid #}
                 <div class="uk-width-1-2@m uk-visible@m uk-flex uk-flex-center uk-flex-middle">
-                    <div class="polaroid rotate-3 uk-position-relative" style="max-width: 450px;">
-                        <div class="tape tape-top-center"></div>
-                        <img src="{{ asset('images/danser.png') }}" alt="Danse Valou" />
+                    <div class="reveal reveal--scale reveal-delay-2" style="max-width: 420px; width: 100%;">
+                        <div class="polaroid rotate-3" style="position: relative;">
+                            <div class="tape tape-top-center"></div>
+                            <img src="{{ asset('images/danser.png') }}"
+                                 alt="Cours de danse chez Danse Valou – passion et magie" />
+                            <p class="font-handwritten uk-text-center uk-margin-small-top"
+                               style="font-size: 1.3rem; color: var(--text-muted); margin: 10px 0 0;">
+                                Bienvenue ✨
+                            </p>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
-</div>
-<div class="uk-section uk-section-large uk-background-secondary uk-light uk-position-relative">
-    <div class="uk-container">
-        <div class="uk-text-center uk-margin-bottom rotate-neg-1">
-             <h3 class="uk-text-uppercase font-handwritten" style="font-size: 3rem; color: #fff;">Notre histoire...</h3>
-        </div>
-        <div class="uk-text-center" uk-grid>
-            <div class="uk-width-1-2@m uk-width-1-1">
-                 <div class="polaroid rotate-neg-2 uk-position-relative" style="background: white; padding: 10px 10px 40px 10px;">
-                    <div class="tape tape-corner-left"></div>
-                    <div class="tape tape-corner-right"></div>
-                    <div style="overflow: hidden;">
-                        <video src="https://yootheme.com/site/images/media/yootheme-pro.mp4" width="1800" height="1200" loop muted playsinline uk-video="autoplay: inview"></video>
-                    </div>
-                    <p class="uk-text-muted uk-text-small uk-margin-small-top font-handwritten" style="color: #333 !important; font-size: 1.5rem;">Souvenirs de 1989</p>
-                 </div>
-            </div>
-            <div class="uk-width-1-2@m uk-width-1-1 uk-flex uk-flex-middle">
-                <div class="uk-text-justify uk-padding-large uk-background-default uk-text-dark" style="transform: rotate(1deg); box-shadow: 5px 5px 0px rgba(0,0,0,0.1);">
-                    <p style="font-size: 1rem; color: #333;">
-                        Tout a commencé en 1989, j'étais encore aux études à l'école de danse. On m'a proposé un remplacement de deux heures
-                        de cours de danse classique à l'école du Sacré Coeur Clos de Waterloo. J'ai accepté, les petites avaient entre 6 à 8 ans. J'ai
-                        alors proposé d'ajouter des heures en jazz pour les plus grandes. Puis, j'ai ajouté des cours pour les plus petites et de fil en
-                        aiguilles, j'ai été demandée au clos... Je donnais des cours dans différentes villes de Belgique :
-                        Tournai, Jodoigne, Anderlecht, Uccle, St. Gilles, Etterbeek, Braine L'Alleud.
-                        <br><br>
-                        <span class="font-handwritten" style="font-size: 1.2rem; color: var(--accent-primary);">"Ma priorité a toujours été que chacun se sente bien chez moi."</span>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+</section>
 
-
-
+{# ── MARQUEE ──────────────────────────────────────────────── #}
 <div class="marquee-wrapper">
-  <div class="marquee">
-    <span class="marquee-text">
-        Passion & Magie • Danse Valou • Rejoignez-nous • Passion & Magie • Danse Valou • Rejoignez-nous •
-    </span>
-  </div>
+    <div class="marquee-track">
+        <div class="marquee-inner">
+            <span class="marquee-text">
+                Passion &amp; Magie
+                <span class="dot"></span>
+                Danse Valou
+                <span class="dot"></span>
+                Rejoignez-nous
+                <span class="dot"></span>
+                Jazz · Classique · Hip-Hop · Yoga
+                <span class="dot"></span>
+            </span>
+        </div>
+    </div>
 </div>
 
-<div class="uk-section" style="min-height:300px; background-color: var(--bg-secondary); position: relative;">
+{# ── NOTRE HISTOIRE ───────────────────────────────────────── #}
+<section class="uk-section uk-section-large section-divider" style="background-color: var(--accent-primary); position: relative; overflow: hidden;">
+    {# Decorative background circles #}
+    <div style="position:absolute; top:-100px; right:-100px; width:400px; height:400px; border-radius:50%; background:rgba(255,255,255,0.04); pointer-events:none;"></div>
+    <div style="position:absolute; bottom:-60px; left:-60px; width:280px; height:280px; border-radius:50%; background:rgba(255,255,255,0.03); pointer-events:none;"></div>
 
-    <div class="uk-container uk-margin-large-top">
-        <h3 style="color: var(--accent-primary); transform: rotate(-1deg);" class="uk-text-center">Une année chez Danse Valou</h3>
-        <div class="uk-text-center uk-margin-large-top" uk-grid>
-            <div class="uk-width-1-2@m uk-width-1-1 uk-flex uk-flex-middle">
-                <div class="uk-text-justify uk-padding uk-background-muted" style="border-left: 4px solid var(--accent-primary);">
-                    <p class="uk-text-lead font-handwritten" style="color: var(--accent-primary);">Le mot de la fin...</p>
-                    <p>
-                        Tout a commencé en 1989... aujourd'hui nous continuons d'écrire cette histoire ensemble. 
-                        Chaque année est une nouvelle page de notre album souvenir.
-                    </p>
+    <div class="uk-container">
+        <div class="uk-text-center uk-margin-large-bottom reveal">
+            <span class="section-chip" style="background:rgba(255,255,255,0.15); border-color:rgba(255,255,255,0.3); color:#fff;">
+                Notre histoire
+            </span>
+            <h2 class="font-handwritten" style="font-size: clamp(2.5rem, 6vw, 4rem); color: #fff; margin: 8px 0 0;">
+                Depuis 1989...
+            </h2>
+        </div>
+
+        <div uk-grid class="uk-flex-middle">
+            <div class="uk-width-1-2@m uk-width-1-1">
+                <div class="reveal reveal--left">
+                    <div class="polaroid rotate-neg-2" style="position: relative;">
+                        <div class="tape tape-corner-left"></div>
+                        <div class="tape tape-corner-right"></div>
+                        <div style="overflow: hidden; max-height: 320px;">
+                            <video src="https://yootheme.com/site/images/media/yootheme-pro.mp4"
+                                   width="1800" height="1200" loop muted playsinline
+                                   uk-video="autoplay: inview"
+                                   style="width:100%; height:320px; object-fit:cover;"></video>
+                        </div>
+                        <p class="font-handwritten uk-text-center uk-margin-small-top"
+                           style="color: var(--text-muted); font-size: 1.3rem; margin-bottom: 0;">
+                            Souvenirs de 1989
+                        </p>
+                    </div>
                 </div>
             </div>
+
             <div class="uk-width-1-2@m uk-width-1-1">
-                 <div class="uk-container uk-margin">
-                    <div class="uk-child-width-1-2" uk-grid="masonry: true;" uk-lightbox="animation: scale">
+                <div class="reveal reveal--right reveal-delay-2">
+                    <div class="quote-block" style="border-radius: 0 16px 16px 0;">
+                        <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 20px;">
+                            Tout a commencé en 1989, j'étais encore aux études à l'école de danse. On m'a proposé
+                            un remplacement de deux heures de cours de danse classique à l'école du Sacré Cœur
+                            Clos de <strong>Waterloo</strong>. J'ai accepté, les petites avaient entre 6 à 8 ans...
+                        </p>
+                        <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 20px;">
+                            J'ai donné des cours dans différentes villes de Belgique :
+                            Tournai, Jodoigne, Anderlecht, Uccle, St. Gilles, Etterbeek, Braine-l'Alleud.
+                            Aujourd'hui, <strong>Danse Valou</strong> est ancrée à <strong>Waterloo</strong> et accueille
+                            des élèves de tout le <strong>Brabant Wallon</strong>.
+                        </p>
+                        <blockquote style="margin: 0; padding: 16px 0 0; border-top: 1px solid rgba(164,22,74,0.1);">
+                            <p class="font-handwritten" style="font-size: 1.4rem; color: var(--accent-primary); margin: 0;">
+                                "Ma priorité a toujours été que chacun se sente bien chez moi."
+                            </p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{# ── UNE ANNÉE ────────────────────────────────────────────── #}
+<section class="uk-section" style="background-color: var(--bg-secondary);">
+    <div class="uk-container">
+        <div class="uk-text-center uk-margin-large-bottom reveal">
+            <span class="section-chip">Nos moments</span>
+            <h2 style="margin: 8px 0 0;">Une année chez Danse Valou</h2>
+        </div>
+
+        <div uk-grid class="uk-flex-middle">
+            <div class="uk-width-1-2@m uk-width-1-1">
+                <div class="reveal reveal--left reveal-delay-1">
+                    <div class="quote-block">
+                        <p class="font-handwritten" style="font-size: 1.4rem; color: var(--accent-primary); margin-bottom: 12px;">
+                            Le mot de la fin...
+                        </p>
+                        <p style="line-height: 1.8;">
+                            Tout a commencé en 1989… aujourd'hui nous continuons d'écrire cette histoire ensemble.
+                            Chaque année est une nouvelle page de notre album souvenir.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="uk-width-1-2@m uk-width-1-1">
+                <div class="reveal reveal--right reveal-delay-2">
+                    <div uk-grid class="uk-child-width-1-2 uk-grid-small" uk-lightbox="animation: fade">
                         <div>
                             <div class="polaroid rotate-neg-2">
-                                <a class="uk-inline" href="images/design.jpg" data-caption="Caption 1">
-                                    <img src="images/design.jpg" alt="">
+                                <a class="uk-inline" href="{{ asset('images/design.jpg') }}" data-caption="Danse Valou">
+                                    <img src="{{ asset('images/design.jpg') }}" alt="Souvenir de cours chez Danse Valou">
                                 </a>
                             </div>
                         </div>
-                         <div class="uk-margin-large-top">
+                        <div class="uk-margin-large-top">
                             <div class="polaroid rotate-2">
-                                <a class="uk-inline" href="images/design.jpg" data-caption="Caption 1">
-                                    <img src="images/design.jpg" alt="">
+                                <a class="uk-inline" href="{{ asset('images/design.jpg') }}" data-caption="Danse Valou">
+                                    <img src="{{ asset('images/design.jpg') }}" alt="Souvenir de cours chez Danse Valou">
                                 </a>
                             </div>
                         </div>
                         <div>
                             <div class="polaroid rotate-1">
-                                <a class="uk-inline" href="images/design.jpg" data-caption="Caption 1">
-                                    <img src="images/design.jpg" alt="">
+                                <a class="uk-inline" href="{{ asset('images/design.jpg') }}" data-caption="Danse Valou">
+                                    <img src="{{ asset('images/design.jpg') }}" alt="Souvenir de cours chez Danse Valou">
                                 </a>
                             </div>
                         </div>
-                         <div class="uk-margin-large-top">
+                        <div class="uk-margin-large-top">
                             <div class="polaroid rotate-neg-1">
-                                <a class="uk-inline" href="images/design.jpg" data-caption="Caption 1">
-                                    <img src="images/design.jpg" alt="">
+                                <a class="uk-inline" href="{{ asset('images/design.jpg') }}" data-caption="Danse Valou">
+                                    <img src="{{ asset('images/design.jpg') }}" alt="Souvenir de cours chez Danse Valou">
                                 </a>
                             </div>
                         </div>
@@ -118,89 +213,124 @@
             </div>
         </div>
     </div>
-</div>
-<!-- Counter Section -->
-<div class="uk-section" style="min-height:300px; background-image: url('{{ asset('images/pattern.jpg') }}'); background-size: cover; position: relative;">
-    <!-- Top Tape -->
-     <div class="tape" style="top: -17px; left: 50%; transform: translateX(-50%) rotate(0deg); width: 200px;"></div>
-    <div class="uk-overlay-default uk-position-cover" style="opacity: 0.8;"></div>
-    <div class="uk-container uk-position-relative">
-        <h3 style="color: var(--accent-primary); text-align: center; margin-bottom: 50px;">Notre histoire s'écrit depuis...</h3>
-        <div id="timeCounter">Calculating...</div>
-    </div>
-</div>
+</section>
 
-<div class="uk-section uk-section-large" style="min-height:300px; background-color: var(--bg-secondary);">
-    <div class="uk-container">
-        <h3 style="color: var(--accent-primary);">F.A.Q</h3>
-        <ul uk-accordion="multiple: true" class="uk-accordion">
+{# ── COUNTER ──────────────────────────────────────────────── #}
+<section class="counter-section uk-section"
+         style="background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-primary-light) 100%); position: relative; overflow: hidden;">
+    <div style="position:absolute; inset:0; background-image: url('{{ asset('images/pattern.jpg') }}'); background-size:cover; opacity:0.07; pointer-events:none;"></div>
+
+    <div class="uk-container uk-position-relative">
+        <div class="uk-text-center uk-margin-large-bottom reveal">
+            <h2 class="font-handwritten" style="color: #fff; font-size: clamp(2rem, 5vw, 3.2rem); margin:0;">
+                Notre histoire s'écrit depuis…
+            </h2>
+        </div>
+
+        <div id="timeCounter" class="uk-grid-match uk-child-width-1-2@s uk-child-width-1-4@m uk-text-center" uk-grid>
+            <div class="reveal reveal-delay-1">
+                <div class="counter-card">
+                    <span class="counter-number" id="counter-days">—</span>
+                    <p class="counter-label">Jours</p>
+                </div>
+            </div>
+            <div class="reveal reveal-delay-2">
+                <div class="counter-card">
+                    <span class="counter-number" id="counter-hours">—</span>
+                    <p class="counter-label">Heures</p>
+                </div>
+            </div>
+            <div class="reveal reveal-delay-3">
+                <div class="counter-card">
+                    <span class="counter-number" id="counter-minutes">—</span>
+                    <p class="counter-label">Minutes</p>
+                </div>
+            </div>
+            <div class="reveal reveal-delay-4">
+                <div class="counter-card">
+                    <span class="counter-number" id="counter-seconds">—</span>
+                    <p class="counter-label">Secondes</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{# ── FAQ ──────────────────────────────────────────────────── #}
+<section class="uk-section uk-section-large" style="background-color: var(--bg-secondary);">
+    <div class="uk-container" style="max-width: 720px;">
+        <div class="uk-text-center uk-margin-large-bottom reveal">
+            <span class="section-chip">Questions fréquentes</span>
+            <h2 style="margin: 8px 0 0;">F.A.Q</h2>
+        </div>
+
+        <ul uk-accordion="multiple: true" class="uk-accordion reveal reveal-delay-1">
             <li class="uk-open">
-                <a class="uk-accordion-title" href style="color: var(--accent-primary); font-weight: 600;">Item 1</a>
+                <a class="uk-accordion-title" href style="color: var(--accent-primary);">
+                    Comment s'inscrire aux cours ?
+                </a>
                 <div class="uk-accordion-content">
-                    <p style="color: var(--text-primary);">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p style="color: var(--text-secondary);">
+                        Contactez-nous via WhatsApp ou par email pour vous inscrire à nos cours de danse à Waterloo.
+                        Les inscriptions ouvrent généralement en août pour la rentrée de septembre.
+                    </p>
                 </div>
             </li>
             <li>
-                <a class="uk-accordion-title" href style="color: var(--accent-primary); font-weight: 600;">Item 2</a>
+                <a class="uk-accordion-title" href style="color: var(--accent-primary);">
+                    À partir de quel âge peut-on commencer la danse ?
+                </a>
                 <div class="uk-accordion-content">
-                    <p style="color: var(--text-primary);">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor reprehenderit.</p>
+                    <p style="color: var(--text-secondary);">
+                        Nous accueillons les enfants dès 4 ans avec nos cours d'éveil corporel à Waterloo,
+                        jusqu'aux adultes avec nos cours de yoga, stretching et modern jazz.
+                    </p>
                 </div>
             </li>
             <li>
-                <a class="uk-accordion-title" href style="color: var(--accent-primary); font-weight: 600;">Item 3</a>
+                <a class="uk-accordion-title" href style="color: var(--accent-primary);">
+                    Faut-il une expérience préalable ?
+                </a>
                 <div class="uk-accordion-content">
-                    <p style="color: var(--text-primary);">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat proident.</p>
+                    <p style="color: var(--text-secondary);">
+                        Non, nous proposons des cours pour tous les niveaux, des débutants aux danseurs confirmés.
+                        L'important est la passion et l'envie de partager — c'est l'esprit de Danse Valou depuis 1989.
+                    </p>
+                </div>
+            </li>
+            <li>
+                <a class="uk-accordion-title" href style="color: var(--accent-primary);">
+                    Où se situent les cours de danse à Waterloo ?
+                </a>
+                <div class="uk-accordion-content">
+                    <p style="color: var(--text-secondary);">
+                        Nos cours se déroulent dans plusieurs salles à Waterloo et aux alentours en Brabant Wallon.
+                        Consultez notre <a href="{{ path('app_schedule') }}" style="color: var(--accent-primary);">page horaire</a> pour découvrir toutes nos salles et les créneaux disponibles.
+                    </p>
                 </div>
             </li>
         </ul>
     </div>
-</div>
+</section>
+
 <script>
-    // Set your target start date (year, month-1, day, hour, minute, second)
-    const startDate = new Date(2023, 5, 15, 12, 0, 0); // June 15, 2023 12:00:00
-
-    function updateCounter() {
-        const now = new Date();
-        const diff = now - startDate; // Difference in milliseconds
-
-        // Calculate time components
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-        // Display the result
-        // Display the result
-        document.getElementById("timeCounter").innerHTML =
-            `<div class="uk-child-width-1-2@s uk-child-width-1-4@m uk-grid-match" uk-grid>
-                <div>
-                    <div class="sticky-note rotate-neg-2 uk-flex uk-flex-column uk-flex-center uk-flex-middle">
-                        <span class="font-handwritten" style="color: var(--accent-primary); font-size: 3rem; line-height: 1;">${days}</span>
-                        <p class="uk-margin-remove font-handwritten" style="font-size: 1.2rem;">Jours</p>
-                    </div>
-                </div>
-                <div>
-                    <div class="sticky-note pink rotate-1 uk-flex uk-flex-column uk-flex-center uk-flex-middle">
-                        <span class="font-handwritten" style="color: var(--accent-primary); font-size: 3rem; line-height: 1;">${hours}</span>
-                        <p class="uk-margin-remove font-handwritten" style="font-size: 1.2rem;">Heures</p>
-                    </div>
-                </div>
-                <div>
-                    <div class="sticky-note blue rotate-neg-1 uk-flex uk-flex-column uk-flex-center uk-flex-middle">
-                        <span class="font-handwritten" style="color: var(--accent-primary); font-size: 3rem; line-height: 1;">${minutes}</span>
-                        <p class="uk-margin-remove font-handwritten" style="font-size: 1.2rem;">Minutes</p>
-                    </div>
-                </div>
-                <div>
-                    <div class="sticky-note rotate-2 uk-flex uk-flex-column uk-flex-center uk-flex-middle">
-                        <span class="font-handwritten" style="color: var(--accent-primary); font-size: 3rem; line-height: 1;">${seconds}</span>
-                        <p class="uk-margin-remove font-handwritten" style="font-size: 1.2rem;">Secondes</p>
-                    </div>
-                </div>
-            </div>`;
+(function() {
+    const startDate = new Date(1989, 8, 1); // September 1989
+    function update() {
+        const diff = Date.now() - startDate.getTime();
+        const days    = Math.floor(diff / 86400000);
+        const hours   = Math.floor((diff % 86400000) / 3600000);
+        const minutes = Math.floor((diff % 3600000) / 60000);
+        const seconds = Math.floor((diff % 60000) / 1000);
+        const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val.toString().padStart(2, '0'); };
+        set('counter-days',    days);
+        set('counter-hours',   hours);
+        set('counter-minutes', minutes);
+        set('counter-seconds', seconds);
     }
-    // Update immediately and then every second
-    updateCounter();
-    setInterval(updateCounter, 1000);
+    update();
+    setInterval(update, 1000);
+})();
 </script>
+
 {% endblock %}

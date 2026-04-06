@@ -1,87 +1,153 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello Controller!{% endblock %}
-{% block stylesheets %}
-    {{ encore_entry_link_tags('teachers') }}
+{% block title %}Professeurs de danse à Waterloo – Danse Valou{% endblock %}
+{% block meta_description %}Découvrez l'équipe de professeurs de danse de Danse Valou à Waterloo. Enseignants qualifiés en jazz, classique, contemporain, hip-hop et yoga pour tous les niveaux.{% endblock %}
+{% block stylesheets %}{{ encore_entry_link_tags('teachers') }}{% endblock %}
+{% block structured_data %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Équipe pédagogique – Danse Valou Waterloo",
+    "itemListElement": [{"@type": "ListItem", "position": 1, "item": {"@type": "Person", "name": "Valou", "jobTitle": "Présidente et professeure de danse", "worksFor": {"@type": "DanceSchool", "name": "Danse Valou", "address": {"@type": "PostalAddress", "addressLocality": "Waterloo", "postalCode": "1410", "addressCountry": "BE"}}}}]
+}
+</script>
 {% endblock %}
 
 {% block body %}
 
-<div class="uk-container">
-    
-    <div class="uk-grid-match uk-child-width-1-2@m uk-child-width-1-1" uk-grid>
-        
-        <!-- Teacher 1 -->
-        <div>
-            <div class="polaroid rotate-1 uk-inline-clip uk-transition-toggle" tabindex="0">
-                <div class="uk-overflow-hidden" style="height: 300px;">
-                    <img src="images/image.png" alt="Valou" class="uk-transition-scale-up uk-transition-opaque" style="object-fit: cover; height: 100%; width: 100%;">
-                </div>
-                <div class="uk-text-center uk-margin-small-top">
-                     <h3 class="font-handwritten" style="color: var(--text-primary); margin-bottom: 0;">Valou</h3>
-                     <p class="uk-text-meta uk-margin-remove-top" style="color: var(--accent-primary);">Présidente</p>
-                </div>
-                <a href="#modal-valou" uk-toggle class="uk-position-cover"></a>
-            </div>
+{# ── PAGE HEADER ─────────────────────────────────────────── #}
+<section style="background: var(--bg-primary); padding: 60px 0 0;">
+    <div class="uk-container uk-text-center">
+        <div class="reveal">
+            <span class="section-chip">L'équipe</span>
         </div>
-
-        <!-- Teacher 2 -->
-        <div>
-             <div class="polaroid rotate-neg-2 uk-inline-clip uk-transition-toggle" tabindex="0">
-                <div class="uk-overflow-hidden" style="height: 300px;">
-                    <img src="images/image.png" alt="Teacher 2" class="uk-transition-scale-up uk-transition-opaque" style="object-fit: cover; height: 100%; width: 100%;">
-                </div>
-                <div class="uk-text-center uk-margin-small-top">
-                     <h3 class="font-handwritten" style="color: var(--text-primary); margin-bottom: 0;">Professeur 2</h3>
-                     <p class="uk-text-meta uk-margin-remove-top" style="color: var(--accent-primary);">Discipline</p>
-                </div>
-                <a href="#modal-2" uk-toggle class="uk-position-cover"></a>
-            </div>
+        <div class="reveal reveal-delay-1" style="margin: 16px 0 8px; display: inline-block; position: relative;">
+            <div class="tape tape-top-center"></div>
+            <h1 class="font-handwritten page-title-note rotate-1">Nos professeurs</h1>
         </div>
-        
-        <!-- Teacher 3 -->
-        <div>
-             <div class="polaroid rotate-2 uk-inline-clip uk-transition-toggle" tabindex="0">
-                <div class="uk-overflow-hidden" style="height: 300px;">
-                    <img src="images/image.png" alt="Teacher 3" class="uk-transition-scale-up uk-transition-opaque" style="object-fit: cover; height: 100%; width: 100%;">
-                </div>
-                <div class="uk-text-center uk-margin-small-top">
-                     <h3 class="font-handwritten" style="color: var(--text-primary); margin-bottom: 0;">Professeur 3</h3>
-                     <p class="uk-text-meta uk-margin-remove-top" style="color: var(--accent-primary);">Discipline</p>
-                </div>
-                <a href="#modal-3" uk-toggle class="uk-position-cover"></a>
-            </div>
-        </div>
-
-         <!-- Teacher 4 -->
-        <div>
-             <div class="polaroid rotate-neg-1 uk-inline-clip uk-transition-toggle" tabindex="0">
-                <div class="uk-overflow-hidden" style="height: 300px;">
-                    <img src="images/image.png" alt="Teacher 4" class="uk-transition-scale-up uk-transition-opaque" style="object-fit: cover; height: 100%; width: 100%;">
-                </div>
-                <div class="uk-text-center uk-margin-small-top">
-                     <h3 class="font-handwritten" style="color: var(--text-primary); margin-bottom: 0;">Professeur 4</h3>
-                     <p class="uk-text-meta uk-margin-remove-top" style="color: var(--accent-primary);">Discipline</p>
-                </div>
-                <a href="#modal-4" uk-toggle class="uk-position-cover"></a>
-            </div>
-        </div>
-
+        <p class="reveal reveal-delay-2" style="color: var(--text-secondary); max-width: 500px; margin: 20px auto 0;">
+            Une équipe passionnée, qualifiée et dédiée à votre épanouissement artistique à <strong>Waterloo</strong> et dans tout le Brabant Wallon.
+        </p>
     </div>
+</section>
 
-    <!-- Modals (Simplified for brevity, would be loop in real app) -->
-    <div id="modal-valou" class="uk-modal-full" uk-modal>
-        <div class="uk-modal-dialog">
-            <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
-            <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
-                <div class="uk-background-cover" style="background-image: url('images/image.png');" uk-height-viewport></div>
-                <div class="uk-padding-large">
-                    <h1 class="font-handwritten" style="color: var(--accent-primary);">Valou - Présidente</h1>
-                    <p>Lorem ipsum dolor sit amet...</p>
+{# ── TEACHER GRID ────────────────────────────────────────── #}
+<section class="uk-section" style="background: var(--bg-primary); padding-bottom: 80px;">
+    <div class="uk-container">
+        <div class="teachers-grid">
+
+            {# Teacher 1 – Valou #}
+            <div class="reveal reveal-delay-1">
+                <div class="polaroid rotate-1 teacher-card" style="padding-bottom: 52px;">
+                    <div class="tape tape-corner-left"></div>
+                    <div class="uk-overflow-hidden" style="height: 320px;">
+                        <img src="{{ asset('images/image.png') }}"
+                             alt="Valou – Présidente et professeure de danse chez Danse Valou"
+                             class="uk-transition-scale-up uk-transition-opaque"
+                             style="object-fit: cover; height: 100%; width: 100%;">
+                    </div>
+                    <div class="teacher-overlay">
+                        <span class="teacher-overlay-text">Voir la biographie</span>
+                    </div>
+                    <div class="uk-text-center uk-padding-small">
+                        <h3 class="font-handwritten" style="color: var(--text-primary); margin-bottom: 2px; font-size: 1.6rem;">Valou</h3>
+                        <p style="color: var(--accent-primary); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 0;">Présidente</p>
+                    </div>
+                    <a href="#modal-valou" uk-toggle class="uk-position-cover" aria-label="Voir la biographie de Valou"></a>
                 </div>
+            </div>
+
+            {# Teacher 2 #}
+            <div class="reveal reveal-delay-2">
+                <div class="polaroid rotate-neg-2 teacher-card" style="padding-bottom: 52px;">
+                    <div class="tape tape-top-center"></div>
+                    <div class="uk-overflow-hidden" style="height: 320px;">
+                        <img src="{{ asset('images/image.png') }}"
+                             alt="Professeure de danse chez Danse Valou"
+                             class="uk-transition-scale-up uk-transition-opaque"
+                             style="object-fit: cover; height: 100%; width: 100%;">
+                    </div>
+                    <div class="teacher-overlay">
+                        <span class="teacher-overlay-text">Voir la biographie</span>
+                    </div>
+                    <div class="uk-text-center uk-padding-small">
+                        <h3 class="font-handwritten" style="color: var(--text-primary); margin-bottom: 2px; font-size: 1.6rem;">Professeur 2</h3>
+                        <p style="color: var(--accent-primary); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 0;">Discipline</p>
+                    </div>
+                    <a href="#modal-2" uk-toggle class="uk-position-cover" aria-label="Voir la biographie du professeur 2"></a>
+                </div>
+            </div>
+
+            {# Teacher 3 #}
+            <div class="reveal reveal-delay-3">
+                <div class="polaroid rotate-2 teacher-card" style="padding-bottom: 52px;">
+                    <div class="tape tape-corner-right"></div>
+                    <div class="uk-overflow-hidden" style="height: 320px;">
+                        <img src="{{ asset('images/image.png') }}"
+                             alt="Professeure de danse chez Danse Valou"
+                             class="uk-transition-scale-up uk-transition-opaque"
+                             style="object-fit: cover; height: 100%; width: 100%;">
+                    </div>
+                    <div class="teacher-overlay">
+                        <span class="teacher-overlay-text">Voir la biographie</span>
+                    </div>
+                    <div class="uk-text-center uk-padding-small">
+                        <h3 class="font-handwritten" style="color: var(--text-primary); margin-bottom: 2px; font-size: 1.6rem;">Professeur 3</h3>
+                        <p style="color: var(--accent-primary); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 0;">Discipline</p>
+                    </div>
+                    <a href="#modal-3" uk-toggle class="uk-position-cover" aria-label="Voir la biographie du professeur 3"></a>
+                </div>
+            </div>
+
+            {# Teacher 4 #}
+            <div class="reveal reveal-delay-4">
+                <div class="polaroid rotate-neg-1 teacher-card" style="padding-bottom: 52px;">
+                    <div class="tape tape-corner-left"></div>
+                    <div class="uk-overflow-hidden" style="height: 320px;">
+                        <img src="{{ asset('images/image.png') }}"
+                             alt="Professeure de danse chez Danse Valou"
+                             class="uk-transition-scale-up uk-transition-opaque"
+                             style="object-fit: cover; height: 100%; width: 100%;">
+                    </div>
+                    <div class="teacher-overlay">
+                        <span class="teacher-overlay-text">Voir la biographie</span>
+                    </div>
+                    <div class="uk-text-center uk-padding-small">
+                        <h3 class="font-handwritten" style="color: var(--text-primary); margin-bottom: 2px; font-size: 1.6rem;">Professeur 4</h3>
+                        <p style="color: var(--accent-primary); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 0;">Discipline</p>
+                    </div>
+                    <a href="#modal-4" uk-toggle class="uk-position-cover" aria-label="Voir la biographie du professeur 4"></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{# ── MODALS ──────────────────────────────────────────────── #}
+<div id="modal-valou" class="uk-modal-full" uk-modal>
+    <div class="uk-modal-dialog">
+        <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+        <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
+            <div class="uk-background-cover"
+                 style="background-image: url('{{ asset('images/image.png') }}'); min-height: 60vh;"
+                 uk-height-viewport></div>
+            <div class="uk-padding-large">
+                <span class="section-chip">Présidente</span>
+                <h2 class="font-handwritten" style="color: var(--accent-primary); font-size: 3rem; margin: 12px 0 20px;">Valou</h2>
+                <p style="color: var(--text-secondary); line-height: 1.8;">
+                    Fondatrice et âme de Danse Valou depuis 1989. Passionnée de danse depuis toujours,
+                    elle a créé cette école avec une vision claire : que chacun se sente bien et épanoui
+                    dans la pratique de la danse.
+                </p>
+                <a href="https://wa.me/32477753577" target="_blank"
+                   class="uk-button uk-button-primary uk-margin-top">
+                    <span>Contacter Valou</span>
+                </a>
             </div>
         </div>
     </div>
-    <!-- Add other modals similarly -->
 </div>
+
 {% endblock %}

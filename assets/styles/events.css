@@ -1,3 +1,39 @@
-.events h3, .events h4{
-    margin-top: 10px;
+.events-page {
+    min-height: 100vh;
+    background-color: var(--bg-primary);
+    padding: 60px 0 100px;
+}
+
+.event-row {
+    display: grid;
+    grid-template-columns: 1fr 60px 1fr;
+    align-items: center;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.event-row:last-child { margin-bottom: 0; }
+
+.event-image-col { position: relative; }
+.event-content-col { position: relative; }
+.event-axis { display: flex; align-items: center; justify-content: center; position: relative; }
+
+/* On mobile, stack everything */
+@media (max-width: 640px) {
+    .event-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .event-axis { display: none; }
+}
+
+/* Reverse alternating rows */
+.event-row.reverse .event-image-col { order: 3; }
+.event-row.reverse .event-axis { order: 2; }
+.event-row.reverse .event-content-col { order: 1; }
+
+@media (max-width: 640px) {
+    .event-row.reverse .event-image-col,
+    .event-row.reverse .event-axis,
+    .event-row.reverse .event-content-col { order: unset; }
 }
