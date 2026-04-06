@@ -227,26 +227,32 @@
             </h2>
         </div>
 
-        <div id="timeCounter" class="uk-grid-match uk-child-width-1-2@s uk-child-width-1-4@m uk-text-center" uk-grid>
+        <div id="timeCounter" class="uk-grid-match uk-child-width-1-2@s uk-child-width-1-5@m uk-text-center" uk-grid>
             <div class="reveal reveal-delay-1">
+                <div class="counter-card">
+                    <span class="counter-number" id="counter-years">—</span>
+                    <p class="counter-label">Années</p>
+                </div>
+            </div>
+            <div class="reveal reveal-delay-2">
                 <div class="counter-card">
                     <span class="counter-number" id="counter-days">—</span>
                     <p class="counter-label">Jours</p>
                 </div>
             </div>
-            <div class="reveal reveal-delay-2">
+            <div class="reveal reveal-delay-3">
                 <div class="counter-card">
                     <span class="counter-number" id="counter-hours">—</span>
                     <p class="counter-label">Heures</p>
                 </div>
             </div>
-            <div class="reveal reveal-delay-3">
+            <div class="reveal reveal-delay-4">
                 <div class="counter-card">
                     <span class="counter-number" id="counter-minutes">—</span>
                     <p class="counter-label">Minutes</p>
                 </div>
             </div>
-            <div class="reveal reveal-delay-4">
+            <div class="reveal reveal-delay-5">
                 <div class="counter-card">
                     <span class="counter-number" id="counter-seconds">—</span>
                     <p class="counter-label">Secondes</p>
@@ -317,12 +323,18 @@
 (function() {
     const startDate = new Date(1989, 8, 1); // September 1989
     function update() {
-        const diff = Date.now() - startDate.getTime();
-        const days    = Math.floor(diff / 86400000);
-        const hours   = Math.floor((diff % 86400000) / 3600000);
-        const minutes = Math.floor((diff % 3600000) / 60000);
-        const seconds = Math.floor((diff % 60000) / 1000);
+        const now  = new Date();
+        const diff = now - startDate;
+        const years = now.getFullYear() - startDate.getFullYear() -
+            (new Date(now.getFullYear(), startDate.getMonth(), startDate.getDate()) > now ? 1 : 0);
+        const lastAnniversary = new Date(startDate.getFullYear() + years, startDate.getMonth(), startDate.getDate());
+        const remainingMs = now - lastAnniversary;
+        const days    = Math.floor(remainingMs / 86400000);
+        const hours   = Math.floor((remainingMs % 86400000) / 3600000);
+        const minutes = Math.floor((remainingMs % 3600000) / 60000);
+        const seconds = Math.floor((remainingMs % 60000) / 1000);
         const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val.toString().padStart(2, '0'); };
+        set('counter-years',   years);
         set('counter-days',    days);
         set('counter-hours',   hours);
         set('counter-minutes', minutes);
