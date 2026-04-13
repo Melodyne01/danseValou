@@ -1,27 +1,31 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Horaire des cours de danse à Waterloo – Danse Valou{% endblock %}
-{% block meta_description %}Horaire complet des cours de danse à Waterloo : jazz, classique, contemporain, hip-hop, yoga, éveil corporel et parascolaire. Mercredi, jeudi et vendredi.{% endblock %}
+{% block meta_description %}Horaire complet des cours de danse à Waterloo : jazz, hip-hop, break, contemporain, parascolaire. Mercredi, jeudi, vendredi. Professeurs : Valou, Vanny, Aurélie, Maxim, Sylvie.{% endblock %}
+
 {% block structured_data %}
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": "Horaire des cours de danse à Waterloo – Danse Valou",
+    "name": "Horaire des cours de danse – Danse Valou Waterloo",
     "itemListElement": [
-        {"@type": "ListItem", "position": 1,  "name": "Jazz Débutant – Mercredi 14h00"},
-        {"@type": "ListItem", "position": 2,  "name": "Classique Moyen – Mercredi 15h00"},
-        {"@type": "ListItem", "position": 3,  "name": "Contemporain Avancé – Mercredi 16h00"},
-        {"@type": "ListItem", "position": 4,  "name": "Hip Hop Ados – Mercredi 17h00"},
-        {"@type": "ListItem", "position": 5,  "name": "Yoga Vinyasa – Mercredi 18h00"},
-        {"@type": "ListItem", "position": 6,  "name": "Eveil Corporel (4-5 ans) – Jeudi 17h00"},
-        {"@type": "ListItem", "position": 7,  "name": "Initiation Danse (6-8 ans) – Jeudi 18h00"},
-        {"@type": "ListItem", "position": 8,  "name": "Barre au sol – Jeudi 19h00"},
-        {"@type": "ListItem", "position": 9,  "name": "Atelier Chorégraphique – Jeudi 20h00"},
-        {"@type": "ListItem", "position": 10, "name": "Funky Jazz (10-12 ans) – Vendredi 17h30"},
-        {"@type": "ListItem", "position": 11, "name": "Ragga Ados – Vendredi 18h30"},
-        {"@type": "ListItem", "position": 12, "name": "Modern Jazz Adultes – Vendredi 19h30"},
-        {"@type": "ListItem", "position": 13, "name": "Stretching – Vendredi 20h30"}
+        {"@type": "ListItem", "position": 1,  "name": "Jazz I – Mercredi 14h-15h (3-6 ans)"},
+        {"@type": "ListItem", "position": 2,  "name": "Jazz II & Hip Hop – Mercredi 15h-16h (6-8 ans)"},
+        {"@type": "ListItem", "position": 3,  "name": "Jazz III & Hip Hop – Mercredi 16h-17h (9 ans et +)"},
+        {"@type": "ListItem", "position": 4,  "name": "Jazz IV & Hip Hop II – Mercredi 17h-18h (12 ans et +)"},
+        {"@type": "ListItem", "position": 5,  "name": "Hip Hop III – Mercredi 18h-19h"},
+        {"@type": "ListItem", "position": 6,  "name": "Hip Hop IV – Mercredi 19h-20h"},
+        {"@type": "ListItem", "position": 7,  "name": "Jazz adulte – Mercredi 20h30-21h30"},
+        {"@type": "ListItem", "position": 8,  "name": "Break – Jeudi 15h30-16h30"},
+        {"@type": "ListItem", "position": 9,  "name": "Break – Jeudi 17h-18h"},
+        {"@type": "ListItem", "position": 10, "name": "Hip Hop I – Jeudi 18h-19h (6-11 ans)"},
+        {"@type": "ListItem", "position": 11, "name": "Jazz – Jeudi 19h-20h (15 ans et +)"},
+        {"@type": "ListItem", "position": 12, "name": "Jazz II & III & Hip Hop – Vendredi 16h50-17h50 (6 ans et +)"},
+        {"@type": "ListItem", "position": 13, "name": "Jazz IV & Hip Hop I – Vendredi 17h50-18h50 (12 ans et +)"},
+        {"@type": "ListItem", "position": 14, "name": "Jazz IV Contempo – Vendredi 18h50-19h50 (12 ans et +)"},
+        {"@type": "ListItem", "position": 15, "name": "Jazz V Contempo avancé – Vendredi 20h-21h (17 ans et +)"},
+        {"@type": "ListItem", "position": 16, "name": "Jazz VI Contempo avancé – Vendredi 21h-22h"}
     ]
 }
 </script>
@@ -30,156 +34,309 @@
 {% block body %}
 
 {# ── PAGE HEADER ─────────────────────────────────────────── #}
-<section style="background: var(--bg-primary); padding: 60px 0 0;">
+<section class="sched-hero">
     <div class="uk-container uk-text-center">
         <div class="reveal">
             <span class="section-chip">Planning</span>
         </div>
-        <div class="reveal reveal-delay-1" style="margin: 16px 0 8px; display: inline-block; position: relative;">
+        <div class="reveal reveal-delay-1" style="margin: 16px 0 0; display: inline-block; position: relative;">
             <div class="tape tape-top-center"></div>
-            <h1 class="font-handwritten page-title-note rotate-neg-1">Notre horaire</h1>
+            <h1 class="font-handwritten page-title-note sched-main-title rotate-neg-1">Notre horaire</h1>
         </div>
-        <p class="reveal reveal-delay-2" style="color: var(--text-secondary); max-width: 500px; margin: 20px auto 0;">
+        <p class="reveal reveal-delay-2 sched-subtitle">
             Mercredi, jeudi et vendredi à <strong>Waterloo</strong> — des cours pour tous les âges et tous les niveaux, de 4 ans à l'âge adulte.
         </p>
     </div>
 </section>
 
-{# ── SCHEDULE CARDS ──────────────────────────────────────── #}
-<section class="uk-section" style="background: var(--bg-primary);">
+{# ── COLONNES PRINCIPALES ────────────────────────────────── #}
+<section class="sched-section">
     <div class="uk-container">
-        <div class="uk-grid-match uk-child-width-1-3@m uk-child-width-1-1" uk-grid>
+        <div class="uk-grid uk-grid-small uk-child-width-1-4@l uk-child-width-1-2@m uk-child-width-1-1" uk-grid>
 
-            {# Wednesday #}
+            {# ── MERCREDI ── #}
             <div class="reveal reveal-delay-1">
-                <div class="polaroid schedule-day-card rotate-1"
-                     style="background: #e3f2fd; padding: 0; overflow: hidden;">
-                    <div class="tape tape-top-center"></div>
-                    <div class="day-header" style="background: rgba(164,22,74,0.06); border-bottom: 1px solid rgba(164,22,74,0.08);">
-                        <h2 class="font-handwritten" style="color: var(--accent-primary); font-size: 2rem; margin: 0;">Mercredi</h2>
+                <div class="sched-col">
+                    <div class="sched-col-header">
+                        <h2 class="font-handwritten sched-day-title">Mercredi</h2>
                     </div>
-                    <ul class="class-list" style="padding: 8px 0 16px;">
-                        <li><span class="class-time">14h00</span> Jazz Débutant</li>
-                        <li><span class="class-time">15h00</span> Classique Moyen</li>
-                        <li><span class="class-time">16h00</span> Contemporain Avancé</li>
-                        <li><span class="class-time">17h00</span> Hip Hop Ados</li>
-                        <li><span class="class-time">18h00</span> Yoga Vinyasa</li>
+                    <ul class="sched-list">
+                        <li class="sched-item">
+                            <span class="sched-time">14h–15h</span>
+                            <div class="sched-info">
+                                <span class="sched-name">Jazz I</span>
+                                <span class="sched-teachers">Valou <span class="sched-room">(3)</span></span>
+                                <span class="sched-age">3 → 6 ans</span>
+                            </div>
+                        </li>
+                        <li class="sched-item">
+                            <span class="sched-time">15h–16h</span>
+                            <div class="sched-info">
+                                <span class="sched-name">Jazz II & Hip Hop</span>
+                                <span class="sched-teachers">Valou <span class="sched-room">(3)</span></span>
+                                <span class="sched-age">6 → 8 ans</span>
+                            </div>
+                        </li>
+                        <li class="sched-item">
+                            <span class="sched-time">16h–17h</span>
+                            <div class="sched-info">
+                                <span class="sched-name">Jazz III & Hip Hop</span>
+                                <span class="sched-teachers">Valou &amp; Vanny <span class="sched-room">(3)</span></span>
+                                <span class="sched-age">9 ans et +</span>
+                            </div>
+                        </li>
+                        <li class="sched-item">
+                            <span class="sched-time">17h–18h</span>
+                            <div class="sched-info">
+                                <span class="sched-name">Jazz IV & Hip Hop II</span>
+                                <span class="sched-teachers">Vanny <span class="sched-room">(3)</span></span>
+                                <span class="sched-age">12 ans et +</span>
+                            </div>
+                        </li>
+                        <li class="sched-item">
+                            <span class="sched-time">18h–19h</span>
+                            <div class="sched-info">
+                                <span class="sched-name">Hip Hop III</span>
+                                <span class="sched-teachers">Aurélie &amp; Vanny <span class="sched-room">(3)</span></span>
+                            </div>
+                        </li>
+                        <li class="sched-item">
+                            <span class="sched-time">19h–20h</span>
+                            <div class="sched-info">
+                                <span class="sched-name">Hip Hop IV</span>
+                                <span class="sched-teachers">Aurélie <span class="sched-room">(3)</span></span>
+                            </div>
+                        </li>
+                        <li class="sched-item sched-item--accent">
+                            <span class="sched-time">20h30–21h30</span>
+                            <div class="sched-info">
+                                <span class="sched-name">Jazz adulte</span>
+                                <span class="sched-teachers">Valou &amp; Vanny <span class="sched-room">(1)</span></span>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
 
-            {# Thursday #}
+            {# ── JEUDI + SALLES ── #}
             <div class="reveal reveal-delay-2">
-                <div class="polaroid schedule-day-card rotate-neg-1"
-                     style="background: #fff9c4; padding: 0; overflow: hidden;">
-                    <div class="tape tape-corner-left"></div>
-                    <div class="day-header" style="background: rgba(164,22,74,0.06); border-bottom: 1px solid rgba(164,22,74,0.08);">
-                        <h2 class="font-handwritten" style="color: var(--accent-primary); font-size: 2rem; margin: 0;">Jeudi</h2>
+                <div class="sched-col">
+                    <div class="sched-col-header">
+                        <h2 class="font-handwritten sched-day-title">Jeudi</h2>
                     </div>
-                    <ul class="class-list" style="padding: 8px 0 16px;">
-                        <li><span class="class-time">17h00</span> Éveil Corporel (4–5 ans)</li>
-                        <li><span class="class-time">18h00</span> Initiation Danse (6–8 ans)</li>
-                        <li><span class="class-time">19h00</span> Barre au sol</li>
-                        <li><span class="class-time">20h00</span> Atelier Chorégraphique</li>
+                    <ul class="sched-list">
+                        <li class="sched-item">
+                            <span class="sched-time">15h30–16h30</span>
+                            <div class="sched-info">
+                                <span class="sched-name">Break</span>
+                                <span class="sched-teachers">Maxim <span class="sched-room">(1)</span></span>
+                            </div>
+                        </li>
+                        <li class="sched-item">
+                            <span class="sched-time">17h–18h</span>
+                            <div class="sched-info">
+                                <span class="sched-name">Break</span>
+                                <span class="sched-teachers">Maxim <span class="sched-room">(3)</span></span>
+                            </div>
+                        </li>
+                        <li class="sched-item">
+                            <span class="sched-time">18h–19h</span>
+                            <div class="sched-info">
+                                <span class="sched-name">Hip Hop I</span>
+                                <span class="sched-teachers">Vanny <span class="sched-room">(3)</span></span>
+                                <span class="sched-age">6 → 11 ans</span>
+                            </div>
+                        </li>
+                        <li class="sched-item">
+                            <span class="sched-time">19h–20h</span>
+                            <div class="sched-info">
+                                <span class="sched-name">Jazz</span>
+                                <span class="sched-teachers">Vanny <span class="sched-room">(3)</span></span>
+                                <span class="sched-age">15 ans et +</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                {# ── SALLES ── #}
+                <div class="sched-salles">
+                    <div class="sched-salles-header">
+                        <h3 class="font-handwritten sched-salles-title">Salles</h3>
+                    </div>
+                    <ul class="sched-salles-list">
+                        <li>
+                            <span class="sched-room-num">1</span>
+                            <div>
+                                <strong>École St. François d'Assise</strong>
+                                <span>Rue Fond Thirion 33</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="sched-room-num">2</span>
+                            <div>
+                                <strong>École du Chenois</strong>
+                                <span>Rue Mattot 135</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="sched-room-num">3</span>
+                            <div>
+                                <strong>École de l'Envol</strong>
+                                <span>Rue François Libert 1</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="sched-room-num">4</span>
+                            <div>
+                                <strong>École Sacré Cœur Clos</strong>
+                                <span>Avenue Beau Séjour 16A</span>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
 
-            {# Friday #}
+            {# ── VENDREDI ── #}
             <div class="reveal reveal-delay-3">
-                <div class="polaroid schedule-day-card rotate-2"
-                     style="background: #ffebee; padding: 0; overflow: hidden;">
-                    <div class="tape tape-corner-right"></div>
-                    <div class="day-header" style="background: rgba(164,22,74,0.06); border-bottom: 1px solid rgba(164,22,74,0.08);">
-                        <h2 class="font-handwritten" style="color: var(--accent-primary); font-size: 2rem; margin: 0;">Vendredi</h2>
+                <div class="sched-col">
+                    <div class="sched-col-header">
+                        <h2 class="font-handwritten sched-day-title">Vendredi</h2>
                     </div>
-                    <ul class="class-list" style="padding: 8px 0 16px;">
-                        <li><span class="class-time">17h30</span> Funky Jazz (10–12 ans)</li>
-                        <li><span class="class-time">18h30</span> Ragga (Ados)</li>
-                        <li><span class="class-time">19h30</span> Modern Jazz (Adultes)</li>
-                        <li><span class="class-time">20h30</span> Stretching</li>
+                    <ul class="sched-list">
+                        <li class="sched-item">
+                            <span class="sched-time">16h50–17h50</span>
+                            <div class="sched-info">
+                                <span class="sched-name">Jazz II & III & Hip Hop</span>
+                                <span class="sched-teachers">Valou <span class="sched-room">(3)</span></span>
+                                <span class="sched-age">6 ans et +</span>
+                            </div>
+                        </li>
+                        <li class="sched-item">
+                            <span class="sched-time">17h50–18h50</span>
+                            <div class="sched-info">
+                                <span class="sched-name">Jazz IV & Hip Hop I</span>
+                                <span class="sched-teachers">Vanny <span class="sched-room">(3)</span></span>
+                                <span class="sched-age">12 ans et +</span>
+                            </div>
+                        </li>
+                        <li class="sched-item">
+                            <span class="sched-time">18h50–19h50</span>
+                            <div class="sched-info">
+                                <span class="sched-name">Jazz IV Contempo</span>
+                                <span class="sched-teachers">Valou &amp; Vanny</span>
+                                <span class="sched-age">12 ans et +</span>
+                            </div>
+                        </li>
+                        <li class="sched-item sched-item--accent">
+                            <span class="sched-time">20h–21h</span>
+                            <div class="sched-info">
+                                <span class="sched-name">Jazz V Contempo avancé</span>
+                                <span class="sched-teachers">Sylvie, Vanny &amp; Valou</span>
+                                <span class="sched-age">17 ans et +</span>
+                            </div>
+                        </li>
+                        <li class="sched-item sched-item--accent">
+                            <span class="sched-time">21h–22h</span>
+                            <div class="sched-info">
+                                <span class="sched-name">Jazz VI Contempo avancé</span>
+                                <span class="sched-teachers">Sylvie, Vanny &amp; Valou</span>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
 
-        </div>
-    </div>
-</section>
-
-{# ── PARASCOLAIRE ────────────────────────────────────────── #}
-<section class="uk-section" style="background: var(--bg-secondary);">
-    <div class="uk-container">
-        <div class="uk-text-center uk-margin-large-bottom reveal">
-            <span class="section-chip">Extrascolaire</span>
-            <h2 class="font-handwritten" style="margin: 8px 0 0; font-size: 2.5rem;">Parascolaire</h2>
-            <p style="color: var(--text-secondary); margin-top: 8px; max-width: 480px; margin-left: auto; margin-right: auto;">
-                Activités après l'école pour les enfants et adolescents de <strong>Waterloo</strong> et du Brabant Wallon.
-            </p>
-        </div>
-
-        <div class="uk-grid-match uk-child-width-1-3@m uk-child-width-1-1" uk-grid>
-            <div class="reveal reveal-delay-1">
-                <div class="sticky-note parascolaire-card rotate-neg-2">
-                    <div class="tape tape-top-center"></div>
-                    <h3 class="font-handwritten" style="font-size: 1.8rem; margin-bottom: 12px;">Mercredi</h3>
-                    <p style="color: var(--text-secondary); margin: 0;">Activités récréatives et créatives pour les 6–12 ans.</p>
-                </div>
-            </div>
-            <div class="reveal reveal-delay-2">
-                <div class="sticky-note parascolaire-card blue rotate-1">
-                    <div class="tape tape-top-center"></div>
-                    <h3 class="font-handwritten" style="font-size: 1.8rem; margin-bottom: 12px;">Jeudi</h3>
-                    <p style="color: var(--text-secondary); margin: 0;">Aide aux devoirs et jeux de société.</p>
-                </div>
-            </div>
-            <div class="reveal reveal-delay-3">
-                <div class="sticky-note parascolaire-card pink rotate-2">
-                    <div class="tape tape-top-center"></div>
-                    <h3 class="font-handwritten" style="font-size: 1.8rem; margin-bottom: 12px;">Vendredi</h3>
-                    <p style="color: var(--text-secondary); margin: 0;">Initiation aux arts du spectacle.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-{# ── NOS SALLES ──────────────────────────────────────────── #}
-<section class="uk-section" style="background: var(--bg-primary); padding-bottom: 80px;">
-    <div class="uk-container">
-        <div class="uk-text-center uk-margin-large-bottom reveal">
-            <span class="section-chip">Localisation</span>
-            <h2 style="margin: 8px 0 0;">Nos salles à Waterloo</h2>
-        </div>
-
-        <div class="uk-child-width-1-2@s uk-child-width-1-4@m uk-grid-match" uk-grid>
-            <div class="reveal reveal-delay-1">
-                <div class="room-card">
-                    <div class="room-number">1</div>
-                    <p style="font-weight: 700; margin-bottom: 4px; color: var(--text-primary);">École St. François</p>
-                    <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Rue des Écoles, 1</p>
-                </div>
-            </div>
-            <div class="reveal reveal-delay-2">
-                <div class="room-card">
-                    <div class="room-number">2</div>
-                    <p style="font-weight: 700; margin-bottom: 4px; color: var(--text-primary);">École du Chenois</p>
-                    <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Avenue des Tilleuls, 5</p>
-                </div>
-            </div>
-            <div class="reveal reveal-delay-3">
-                <div class="room-card">
-                    <div class="room-number">3</div>
-                    <p style="font-weight: 700; margin-bottom: 4px; color: var(--text-primary);">École de l'Envol</p>
-                    <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Chemin du Vent, 12</p>
-                </div>
-            </div>
+            {# ── PARASCOLAIRES ── #}
             <div class="reveal reveal-delay-4">
-                <div class="room-card">
-                    <div class="room-number">4</div>
-                    <p style="font-weight: 700; margin-bottom: 4px; color: var(--text-primary);">Sacré Cœur Clos</p>
-                    <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Place du Clos, 3</p>
+                <div class="sched-col sched-col--parascolaire">
+                    <div class="sched-col-header">
+                        <h2 class="font-handwritten sched-day-title">Parascolaires</h2>
+                    </div>
+                    <div class="sched-parascolaire-list">
+
+                        <div class="sched-para-school">
+                            <h4 class="sched-para-school-name">École du Chenois</h4>
+                            <ul class="sched-list sched-list--compact">
+                                <li class="sched-item">
+                                    <span class="sched-time">Mer. 12h50–13h40</span>
+                                    <div class="sched-info">
+                                        <span class="sched-name">Jazz</span>
+                                        <span class="sched-teachers">Valou</span>
+                                        <span class="sched-age">4 → 8 ans</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="sched-para-school">
+                            <h4 class="sched-para-school-name">St. François d'Assise</h4>
+                            <ul class="sched-list sched-list--compact">
+                                <li class="sched-item">
+                                    <span class="sched-time">Mar. 12h40–13h30</span>
+                                    <div class="sched-info">
+                                        <span class="sched-name">Jazz</span>
+                                        <span class="sched-teachers">Valou</span>
+                                        <span class="sched-age">P4 → P6</span>
+                                    </div>
+                                </li>
+                                <li class="sched-item">
+                                    <span class="sched-time">Jeu. 12h40–13h30</span>
+                                    <div class="sched-info">
+                                        <span class="sched-name">Jazz</span>
+                                        <span class="sched-teachers">Valou</span>
+                                        <span class="sched-age">P1 → P3</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="sched-para-school">
+                            <h4 class="sched-para-school-name">Sacré Cœur Clos</h4>
+                            <ul class="sched-list sched-list--compact">
+                                <li class="sched-item">
+                                    <span class="sched-time">Jeu. 15h45–16h45</span>
+                                    <div class="sched-info">
+                                        <span class="sched-name">Jazz</span>
+                                        <span class="sched-teachers">Valou &amp; Vanny</span>
+                                        <span class="sched-age">P3 → P6</span>
+                                    </div>
+                                </li>
+                                <li class="sched-item">
+                                    <span class="sched-time">Ven. 12h30–13h20</span>
+                                    <div class="sched-info">
+                                        <span class="sched-name">Jazz</span>
+                                        <span class="sched-teachers">Valou &amp; Vanny</span>
+                                        <span class="sched-age">M3 → P2</span>
+                                    </div>
+                                </li>
+                                <li class="sched-item">
+                                    <span class="sched-time">Ven. 15h30–16h20</span>
+                                    <div class="sched-info">
+                                        <span class="sched-name">Baby Jazz</span>
+                                        <span class="sched-age">Accueil → M2</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
                 </div>
             </div>
+
+        </div>{# end grid #}
+    </div>
+</section>
+
+{# ── IMPORTANT ───────────────────────────────────────────── #}
+<section class="sched-important-section">
+    <div class="uk-container">
+        <div class="sched-important reveal">
+            <h3 class="font-handwritten sched-important-title">Important</h3>
+            <ul class="sched-important-list">
+                <li>Inscriptions dès à présent pour l'année prochaine</li>
+                <li>Reprise des cours : semaine du <strong>8 septembre 2025</strong></li>
+                <li>Spectacle 2026 : weekend du <strong>30 et 31 mai 2026</strong></li>
+            </ul>
         </div>
     </div>
 </section>

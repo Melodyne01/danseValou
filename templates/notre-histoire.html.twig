@@ -1,0 +1,171 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Notre histoire – Danse Valou, école de danse à Waterloo depuis 1989{% endblock %}
+{% block meta_description %}L'histoire de Danse Valou : une école de danse à Waterloo fondée sur la bienveillance, la famille et la passion partagée depuis 1989. Une aventure humaine et artistique.{% endblock %}
+
+{% block body %}
+<div class="story-page">
+
+    {# ── TITRE PRINCIPAL ───────────────────────────────────── #}
+    <section class="story-hero">
+        <div class="uk-container uk-text-center">
+            <div class="reveal">
+                <span class="section-chip story-chip">Notre histoire</span>
+            </div>
+            <h1 class="story-title reveal reveal-delay-1">
+                <span class="story-title-line1">Une année au cours de</span>
+                <span class="story-title-line2">Danse Valou</span>
+            </h1>
+        </div>
+    </section>
+
+    {# ── BLOC 1 + images haut-droite ───────────────────────── #}
+    <section class="story-section">
+        <div class="uk-container">
+            <div class="uk-grid uk-grid-large uk-flex-middle" uk-grid>
+
+                <div class="uk-width-1-2@m uk-width-1-1">
+                    <div class="reveal reveal--left story-body-wrap">
+                        <p class="story-body">
+                            C'est une succession de semaines rythmées par la joie,
+                            l'amour du mouvement, le partage et, bien sûr,
+                            l'effervescence de la préparation d'un spectacle qui nous
+                            tient tous à cœur. Ce sont des rires qui éclatent, des
+                            moments de doute, de stress parfois, et des heures de
+                            répétition où chacun, à son niveau, se dépasse et progresse.
+                            On recommence, on ajuste, on affine, on s'encourage, on
+                            apprend les uns des autres, et on avance ensemble.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="uk-width-1-2@m uk-width-1-1">
+                    <div class="reveal reveal--right">
+                        <div class="story-img-group story-img-group--right">
+                            <div class="story-img-wrap story-img-circle story-img--xl">
+                                <img src="{{ asset('images/danse-valou-waterloo-spectacle-1.webp') }}"
+                                     alt="Spectacle de danse Danse Valou Waterloo">
+                            </div>
+                            <div class="story-img-wrap story-img-oval story-img--sm story-img-secondary">
+                                <img src="{{ asset('images/danse-valou-waterloo-spectacle-2.webp') }}"
+                                     alt="Spectacle annuel école de danse Waterloo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    {# ── images milieu-gauche + BLOC 2 ─────────────────────── #}
+    <section class="story-section">
+        <div class="uk-container">
+            <div class="uk-grid uk-grid-large uk-flex-middle" uk-grid>
+
+                <div class="uk-width-1-2@m uk-width-1-1 uk-flex-last uk-flex-first@m">
+                    <div class="reveal reveal--left">
+                        <div class="story-img-group story-img-group--left">
+                            <div class="story-img-wrap story-img-oval story-img--lg">
+                                <img src="{{ asset('images/danse-valou-waterloo-cours-danse-1.webp') }}"
+                                     alt="Cours de danse à Waterloo – Danse Valou">
+                            </div>
+                            <div class="story-img-wrap story-img-circle story-img--md story-img-secondary">
+                                <img src="{{ asset('images/cours-danse-valou-waterloo-souvenir-1.webp') }}"
+                                     alt="Souvenir de cours chez Danse Valou Waterloo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uk-width-1-2@m uk-width-1-1 uk-flex-first uk-flex-last@m">
+                    <div class="reveal reveal--right story-body-wrap">
+                        <p class="story-body">
+                            Chez Danse Valou, l'évolution personnelle de
+                            chaque élève est au centre de nos priorités. Peu
+                            importe l'âge, l'expérience ou le niveau, chacun
+                            évolue à son propre rythme, dans un cadre
+                            bienveillant, sécurisant et stimulant. Au-delà de la
+                            danse, on y apprend la confiance en soi, le
+                            respect, la persévérance et la force du collectif.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    {# ── BLOC 3 + images bas gauche/droite ─────────────────── #}
+    <section class="story-section">
+        <div class="uk-container">
+            <div class="uk-grid uk-grid-medium uk-flex-middle" uk-grid>
+
+                <div class="uk-width-1-4@m uk-width-1-2 story-img-side">
+                    <div class="reveal reveal-delay-1">
+                        <div class="story-img-group story-img-group--right">
+                            <div class="story-img-wrap story-img-rounded story-img--rect-lg">
+                                <img src="{{ asset('images/danse-valou-waterloo-jazz-enfants-1.webp') }}"
+                                     alt="Cours de jazz enfants Waterloo – Danse Valou">
+                            </div>
+                            <div class="story-img-wrap story-img-oval story-img--rect-sm story-img-secondary">
+                                <img src="{{ asset('images/danse-valou-waterloo-hip-hop-1.webp') }}"
+                                     alt="Cours hip-hop Waterloo – Danse Valou">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uk-width-1-2@m uk-width-1-1">
+                    <div class="reveal story-body-wrap">
+                        <p class="story-body">
+                            Depuis toute petite, je rêvais de créer une école de
+                            danse. Pas simplement un lieu d'enseignement, mais
+                            un véritable cocon : un endroit où chaque élève se
+                            sente à sa place, accueilli, écouté, encouragé.
+                            Une école où l'on vit la danse comme une seconde
+                            maison, avec des valeurs fortes, une ambiance
+                            familiale et des liens sincères.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="uk-width-1-4@m uk-width-1-2 story-img-side">
+                    <div class="reveal reveal-delay-1">
+                        <div class="story-img-group story-img-group--left">
+                            <div class="story-img-wrap story-img-rounded story-img--rect-lg">
+                                <img src="{{ asset('images/danse-valou-waterloo-cours-danse-2.webp') }}"
+                                     alt="Cours de danse Waterloo – Danse Valou">
+                            </div>
+                            <div class="story-img-wrap story-img-circle story-img--rect-sm story-img-secondary">
+                                <img src="{{ asset('images/danse-valou-waterloo-eleves-cours-1.webp') }}"
+                                     alt="Élèves en cours de danse Waterloo – Danse Valou">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    {# ── CONCLUSION ────────────────────────────────────────── #}
+    <section class="story-conclusion-section">
+        <div class="uk-container uk-text-center">
+            <div class="reveal">
+                <div class="story-conclusion-wrap">
+                    <p class="story-conclusion">
+                        Aujourd'hui, ce rêve continue son chemin, il s'enrichit
+                        de différentes personnalités.
+                        Danse Valou est bien plus qu'une école : c'est une famille
+                        que nous construisons ensemble, jour après jour.
+                        Merci à chacun d'en faire partie.
+                    </p>
+                    <span class="story-conclusion-signature font-handwritten">— Valou</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+{% endblock %}

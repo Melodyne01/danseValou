@@ -600,8 +600,327 @@ p { color: var(--text-secondary); }
 }
 
 /* ============================================================
-   SCHEDULE PAGE
+   SCHEDULE PAGE — AFFICHE STYLE
    ============================================================ */
+
+/* Background rose plus soutenu pour la page horaire */
+.sched-hero {
+    background: #d8a0a8;
+    padding: 60px 0 32px;
+}
+
+.sched-hero .page-title-note {
+    background: #fff;
+    color: #a4164a;
+}
+
+.sched-main-title {
+    color: #a4164a !important;
+    text-shadow:
+        0 0 8px rgba(164, 22, 74, 0.55),
+        0 0 20px rgba(164, 22, 74, 0.30),
+        0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.sched-subtitle {
+    color: #6b3040;
+    max-width: 500px;
+    margin: 20px auto 0;
+}
+
+.sched-section {
+    background: #d8a0a8;
+    padding: 32px 0 48px;
+}
+
+/* ── Colonne / carte jour ── */
+.sched-col {
+    background: #f0ccd4;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 3px 5px 18px rgba(100, 20, 40, 0.14), 0 1px 4px rgba(0,0,0,0.08);
+    margin-bottom: 0;
+}
+
+.sched-col-header {
+    background: rgba(164, 22, 74, 0.12);
+    border-bottom: 2px solid rgba(164, 22, 74, 0.15);
+    padding: 14px 16px;
+    text-align: center;
+}
+
+.sched-day-title {
+    font-size: clamp(1.6rem, 3vw, 2rem) !important;
+    color: #a4164a !important;
+    margin: 0 !important;
+    text-shadow:
+        0 0 6px rgba(164, 22, 74, 0.45),
+        0 0 16px rgba(164, 22, 74, 0.25);
+    letter-spacing: 0.01em;
+}
+
+/* ── Liste de cours ── */
+.sched-list {
+    list-style: none;
+    margin: 0;
+    padding: 4px 0 8px;
+}
+
+.sched-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 9px 14px;
+    border-bottom: 1px solid rgba(164, 22, 74, 0.08);
+    transition: background var(--transition-fast);
+}
+
+.sched-item:last-child { border-bottom: none; }
+
+.sched-item:hover {
+    background: rgba(164, 22, 74, 0.06);
+}
+
+.sched-item--accent {
+    background: rgba(164, 22, 74, 0.05);
+}
+
+.sched-item--accent:hover {
+    background: rgba(164, 22, 74, 0.10);
+}
+
+.sched-time {
+    font-family: 'Caveat', cursive;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #a4164a;
+    min-width: 82px;
+    flex-shrink: 0;
+    line-height: 1.3;
+    padding-top: 1px;
+}
+
+.sched-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.sched-name {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #2d1a22;
+    line-height: 1.2;
+}
+
+.sched-teachers {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #6b4d58;
+    line-height: 1.2;
+}
+
+.sched-age {
+    font-size: 0.70rem;
+    font-weight: 600;
+    color: #9a6070;
+    line-height: 1.2;
+    font-style: italic;
+}
+
+.sched-room {
+    font-size: 0.70rem;
+    font-weight: 700;
+    color: #a4164a;
+    opacity: 0.75;
+}
+
+/* ── Liste compacte (parascolaire) ── */
+.sched-list--compact .sched-item {
+    padding: 7px 14px;
+}
+
+.sched-list--compact .sched-time {
+    font-size: 0.88rem;
+    min-width: 100px;
+}
+
+/* ── Parascolaire colonne ── */
+.sched-col--parascolaire .sched-parascolaire-list {
+    padding: 8px 0;
+}
+
+.sched-para-school {
+    border-bottom: 1px solid rgba(164, 22, 74, 0.10);
+    padding-bottom: 4px;
+    margin-bottom: 0;
+}
+
+.sched-para-school:last-child {
+    border-bottom: none;
+}
+
+.sched-para-school-name {
+    font-size: 0.72rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #a4164a !important;
+    margin: 0 !important;
+    padding: 8px 14px 4px;
+    line-height: 1.2;
+}
+
+/* ── Bloc SALLES ── */
+.sched-salles {
+    margin-top: 12px;
+    background: #eedde2;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 3px 5px 18px rgba(100, 20, 40, 0.10), 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.sched-salles-header {
+    background: rgba(164, 22, 74, 0.10);
+    border-bottom: 2px solid rgba(164, 22, 74, 0.12);
+    padding: 10px 16px;
+    text-align: center;
+}
+
+.sched-salles-title {
+    font-size: 1.4rem !important;
+    color: #a4164a !important;
+    margin: 0 !important;
+    text-shadow: 0 0 6px rgba(164, 22, 74, 0.35);
+}
+
+.sched-salles-list {
+    list-style: none;
+    margin: 0;
+    padding: 6px 0 10px;
+}
+
+.sched-salles-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 14px;
+    border-bottom: 1px solid rgba(164, 22, 74, 0.07);
+    transition: background var(--transition-fast);
+}
+
+.sched-salles-list li:last-child { border-bottom: none; }
+
+.sched-salles-list li:hover {
+    background: rgba(164, 22, 74, 0.05);
+}
+
+.sched-room-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    background: #a4164a;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.70rem;
+    font-weight: 800;
+    margin-top: 1px;
+}
+
+.sched-salles-list li > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.sched-salles-list li strong {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #2d1a22;
+    line-height: 1.2;
+}
+
+.sched-salles-list li span {
+    font-size: 0.70rem;
+    color: #6b4d58;
+    line-height: 1.2;
+}
+
+/* ── Bloc IMPORTANT ── */
+.sched-important-section {
+    background: #d8a0a8;
+    padding: 0 0 64px;
+}
+
+.sched-important {
+    background: #fff5f7;
+    border-radius: 4px;
+    border-left: 4px solid #a4164a;
+    padding: 24px 32px;
+    max-width: 680px;
+    margin: 0 auto;
+    box-shadow: 3px 5px 18px rgba(100, 20, 40, 0.12);
+}
+
+.sched-important-title {
+    font-size: 1.8rem !important;
+    color: #a4164a !important;
+    margin: 0 0 14px !important;
+    text-shadow: 0 0 8px rgba(164, 22, 74, 0.40);
+}
+
+.sched-important-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sched-important-list li {
+    font-size: 0.88rem;
+    color: #4a2030;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.45;
+}
+
+.sched-important-list li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: #a4164a;
+    font-weight: 700;
+}
+
+.sched-important-list li strong {
+    color: #a4164a;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1199px) {
+    .sched-time { min-width: 72px; font-size: 0.92rem; }
+}
+
+@media (max-width: 959px) {
+    /* 2 colonnes : MERCREDI + JEUDI | VENDREDI + PARASCOLAIRES */
+    .sched-important { padding: 20px 24px; }
+}
+
+@media (max-width: 639px) {
+    .sched-hero { padding: 40px 0 24px; }
+    .sched-section { padding: 20px 0 32px; }
+    .sched-important-section { padding: 0 0 40px; }
+    .sched-important { padding: 18px 20px; margin: 0 8px; }
+    .sched-list--compact .sched-time { min-width: 90px; }
+}
+
+/* ── Ancien schedule-day-card conservé pour compatibilité ── */
 .schedule-day-card {
     border-radius: var(--radius-md);
     overflow: hidden;
@@ -933,6 +1252,193 @@ footer::before {
     text-transform: uppercase;
     color: var(--accent-primary);
     margin-bottom: 12px;
+}
+
+/* ============================================================
+   NOTRE HISTOIRE — PAGE ÉDITORIALE
+   ============================================================ */
+
+.story-page {
+    background: #ede0e0;
+    min-height: 100vh;
+}
+
+/* Chip adapté au fond rose foncé */
+.story-chip {
+    background: rgba(92, 32, 48, 0.10) !important;
+    border-color: rgba(92, 32, 48, 0.22) !important;
+    color: #5c2030 !important;
+}
+
+/* ── Titre principal ── */
+.story-hero {
+    padding: 72px 0 48px;
+}
+
+.story-title {
+    margin: 16px 0 0;
+    line-height: 1;
+    letter-spacing: 0;
+}
+
+.story-title-line1 {
+    display: block;
+    font-family: 'Caveat', cursive;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 600;
+    color: #8a4050;
+    letter-spacing: 0.03em;
+    margin-bottom: 2px;
+}
+
+.story-title-line2 {
+    display: block;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(3.2rem, 8vw, 6.8rem);
+    font-weight: 700;
+    color: #3d1822;
+    letter-spacing: -0.03em;
+    line-height: 0.92;
+}
+
+/* ── Sections ── */
+.story-section {
+    padding: 56px 0;
+}
+
+.story-body-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+}
+
+.story-body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(0.92rem, 1.5vw, 1.05rem);
+    line-height: 2.1;
+    color: #5c2030;
+    text-align: center;
+    margin: 0;
+}
+
+/* ── Groupes d'images ── */
+.story-img-group {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+.story-img-group--right {
+    align-items: flex-end;
+    margin-left: auto;
+}
+
+.story-img-group--left {
+    align-items: flex-start;
+    margin-right: auto;
+}
+
+.story-img-wrap {
+    overflow: hidden;
+    box-shadow: 0 6px 28px rgba(60, 20, 30, 0.12), 0 2px 8px rgba(0,0,0,0.06);
+    flex-shrink: 0;
+}
+
+.story-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Formes */
+.story-img-circle  { border-radius: 50%; }
+.story-img-oval    { border-radius: 50%; }
+.story-img-rounded { border-radius: 18px; }
+
+/* Tailles */
+.story-img--xl      { width: 280px; height: 280px; }
+.story-img--lg      { width: 230px; height: 310px; }
+.story-img--md      { width: 185px; height: 185px; }
+.story-img--sm      { width: 150px; height: 195px; }
+.story-img--rect-lg { width: 250px; height: 168px; }
+.story-img--rect-sm { width: 155px; height: 155px; }
+
+/* Image secondaire décalée */
+.story-img-secondary {
+    position: relative;
+    z-index: 2;
+    margin-top: -52px;
+}
+
+.story-img-group--right .story-img-secondary {
+    margin-right: 28px;
+}
+
+.story-img-group--left .story-img-secondary {
+    margin-left: 28px;
+}
+
+/* Colonnes images section bas */
+.story-img-side {
+    display: flex;
+    align-items: center;
+}
+
+/* ── Conclusion ── */
+.story-conclusion-section {
+    padding: 40px 0 96px;
+}
+
+.story-conclusion-wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.45);
+    border-radius: 4px;
+    padding: 40px 48px;
+    box-shadow: 0 2px 16px rgba(60, 20, 30, 0.07);
+}
+
+.story-conclusion {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(0.98rem, 1.8vw, 1.12rem);
+    line-height: 2.1;
+    color: #5c2030;
+    text-align: center;
+    margin: 0;
+}
+
+.story-conclusion-signature {
+    display: block;
+    font-size: 1.6rem;
+    color: #8a4050;
+    margin-top: 24px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 959px) {
+    .story-img-group--right { margin-left: auto; margin-right: auto; }
+    .story-img-group--left  { margin-left: auto; margin-right: auto; }
+    .story-section { padding: 40px 0; }
+    .story-body-wrap { padding: 24px 8px 0; }
+}
+
+@media (max-width: 639px) {
+    .story-hero { padding: 48px 0 28px; }
+    .story-section { padding: 28px 0; }
+    .story-conclusion-section { padding: 24px 0 64px; }
+    .story-conclusion-wrap { padding: 28px 24px; }
+
+    .story-img--xl      { width: 190px; height: 190px; }
+    .story-img--lg      { width: 165px; height: 220px; }
+    .story-img--md      { width: 130px; height: 130px; }
+    .story-img--sm      { width: 115px; height: 148px; }
+    .story-img--rect-lg { width: 170px; height: 115px; }
+    .story-img--rect-sm { width: 110px; height: 110px; }
+    .story-img-secondary { margin-top: -36px; }
+    .story-img-group--right .story-img-secondary { margin-right: 16px; }
+    .story-img-group--left  .story-img-secondary { margin-left:  16px; }
 }
 
 /* ============================================================

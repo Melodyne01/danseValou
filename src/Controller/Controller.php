@@ -43,4 +43,11 @@ final class Controller extends AbstractController
         return $this->render('/events.html.twig', [
         ]);
     }
+
+    #[Route('/notre-histoire', name: 'app_story')]
+    public function story(): Response
+    {
+        return $this->render('/notre-histoire.html.twig', [
+        ]);
+    }
 }
